@@ -1,16 +1,11 @@
-## Hi there 👋
-
-<!--
-**Mod-Of-Theseus/Mod-Of-Theseus** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+# TO-DO
+- explain how the shaders work internally and what the values in the file do
+- Examples for
+  - `SMODS.back` and deck creation
+  - booster packs and how they work
+  - how to create a tag
+  - how to use the `Deckskin api`
+  - adding ui to your run and how to not make it intrussive
+  - how to make a Seal
+  - add a keybind
+  - make a stake and add an effect for it
