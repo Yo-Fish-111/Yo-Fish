@@ -51,7 +51,7 @@ SMODS.Joker{
     rarity = 4,
     atlas = "LegendJ",
     blueprint_compat = true,
-    config = {extra = {X_mult = 3}},
+    config = {extra = {X_mult = 2}},
     cost = 20,
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.extra.X_mult}}

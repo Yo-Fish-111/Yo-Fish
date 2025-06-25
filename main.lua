@@ -47,6 +47,13 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
+    key = "RareJ",
+    path = "RareJokers.png",
+    px = 71,
+    py = 95
+})
+
+SMODS.Atlas({
     key = "LegendJ",
     path = "LegendaryJokers.png",
     px = 71,
@@ -79,6 +86,7 @@ SMODS.Rarity({
 -- this is where we will register other files from within this mods folder such as stuff from our Items folder, tho if you don't want to load that file you can comment it out by adding "--" aty the start of the line
 -- when setting the files path you need to make sure that you are using the correct capitalization, because if you don't, your mod will crash on linux platforms
 assert(SMODS.load_file("Items/LegendaryJokers.lua"))()
+assert(SMODS.load_file("Items/RareJokers.lua"))()
 assert(SMODS.load_file("Items/UncommonJokers.lua"))()
 assert(SMODS.load_file("Items/CommonJokers.lua"))()
 assert(SMODS.load_file("Items/OmegaJokers.lua"))()

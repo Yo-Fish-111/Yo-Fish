@@ -8,7 +8,7 @@ return{
                 name = "Blobby",
                 text = {
                     "Every time a steel card is held in hand:",
-                    "Exponentiate mult from {X:mult,C:white}^.1{} to {X:mult,C:white}^2{}",
+                    "Exponentiate Mult from {X:mult,C:white}^.5{} to {X:mult,C:white}^3{}",
                     "{C:inactive}Art + Concept by inspectnerd{}",
                 }
             },
@@ -16,7 +16,7 @@ return{
             j_mot_jinxJ = {
                 name = "Jinx",
                 text = {
-                    "Gives {X:mult,C:white}X#1#{} mult.",
+                    "Gives {X:mult,C:white}X#1#{} Mult.",
                     "Increase by {X:mult,C:white}+#2#X{} at end of boss blind.",
                     "Then increase gain by 1 at end of boss blind.",
                     "{C:inactive}Art + Concept by jinxfucks{}",
@@ -34,7 +34,7 @@ return{
             j_mot_titanJ = {
                 name = "Titan",
                 text = {
-                    "Gives {X:mult,C:white}X#1#{} mult for every",
+                    "Gives {X:mult,C:white}X#1#{} Mult for every",
                     "{C:spade}Spade{} card played and scored."
                 }
             },
@@ -42,7 +42,7 @@ return{
             j_mot_censoredJokerJ = {
                 name = "Censored Joker",
                 text = {
-                    "Gives {X:mult,C:white}X#1#{} mult.",
+                    "Gives {X:mult,C:white}X#1#{} Mult.",
                     "Increase by {X:mult,C:white}X#2#{} when selling a card.",
                     "Increase by {X:mult,C:white}X#3#{} when rerolling the shop.",
                     '{C:inactive}"Literally 1984" - The Blood Moth.{}'
@@ -50,19 +50,28 @@ return{
             },
 
             j_mot_rekojJ = {
-                name = "Rejok",
+                name = "Rekoj",
                 text = {
                     "{C:chips}+#1#{} Chips",
                     '{C:inactive}"Oh no, it\'s Jimbo\'s evil cousin, Obmij!{}'
                 }
             },
+
+            j_mot_winningbigJ = {
+                name = "Winning Big",
+                text = {
+                    "Gives {C:money}$#1#{} at end of round,",
+                    "increases by {C:money}$#2#{} every time a lucky card triggers."
+                }
+            },
         },
 
         Spectral = {
-            c_mot_whirlpool = {
-                name = "Whirlpool",
+            c_mot_bermuda = {
+                name = "Bermuda",
                 text = {
-                    "Summon an Omega Joker",
+                    "Summon an Omega Joker,",
+                    "sets money to {C:money}-$20{}",
                     "{C:inactive}Must have room{}"
                 }
             }

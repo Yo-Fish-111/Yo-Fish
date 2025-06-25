@@ -5,7 +5,7 @@ SMODS.Joker{
     rarity = "mot_omega",
     atlas = "OmegaJ",
     config = {},
-    cost = 20,
+    cost = 50,
     blueprint_compat = true,
     loc_vars = function (self, info_queue, card)
         return {vars = {}}
@@ -13,7 +13,7 @@ SMODS.Joker{
     calculate = function (self, card, context)
         if context.individual and context.cardarea == G.hand and not context.end_of_round then
             if SMODS.has_enhancement(context.other_card, "m_steel") then
-                return {emult = tonumber(string.format("%.2f", math.random() + math.random(0, 1)))}
+                return {emult = tonumber(string.format("%.2f", (math.random() + .5) + math.random(0, 2)))}
             end
         end
     end
