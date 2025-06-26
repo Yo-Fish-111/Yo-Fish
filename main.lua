@@ -1,5 +1,5 @@
 --[[
- * main.lua
+ * Main.lua
  * This file is part of Mod of Theseus
  *
  * Copyright (C) 2025 Mod of Theseus
@@ -30,70 +30,69 @@ ModofTheseus = SMODS.current_mod
 ModofTheseus_config = ModofTheseus.config
 ModofTheseus.enabled = copy_table(ModofTheseus_config)
 
-SMODS.Atlas({
+SMODS.Atlas {
     object_type = "Atlas",
     key = "PLH",
     path = "placeholders.png",
     px = 71,
     py = 95,
-})
+}
 
-SMODS.Atlas({
+SMODS.Atlas {
     key = "tarot",
     path = "Tarots.png",
     px = 71,
     py = 95,
-})
+}
 
-SMODS.Atlas({
+SMODS.Atlas {
     key = "CommonJ",
     path = "CommonJokers.png",
     px = 71,
     py = 95
-})
+}
 
-SMODS.Atlas({
+SMODS.Atlas {
     key = "UncommonJ",
     path = "UncommonJokers.png",
     px = 71,
     py = 95
-})
+}
 
-SMODS.Atlas({
+SMODS.Atlas {
     key = "RareJ",
     path = "RareJokers.png",
     px = 71,
     py = 95
-})
+}
 
-SMODS.Atlas({
+SMODS.Atlas {
     key = "LegendJ",
     path = "LegendaryJokers.png",
     px = 71,
     py = 95,
-})
+}
 
-SMODS.Atlas({
+SMODS.Atlas {
     key = "OmegaJ",
     path = "OmegaJokers.png",
     px = 71,
     py = 95,
-})
+}
 
-SMODS.Rarity({
+SMODS.Rarity {
     key = "superb",
     pools = {["Joker"] = true},
     default_weight = 0.01,
     badge_colour = HEX('ffb0b5'),
-})
+}
 
-SMODS.Rarity({
+SMODS.Rarity {
     key = "omega",
     pools = {["Joker"] = true},
     default_weight = 0,
     badge_colour = HEX('000000'),
-})
-
+}
 
 assert(SMODS.load_file("Items/CommonJokers.lua"))()
 assert(SMODS.load_file("Items/Consumables.lua"))()
