@@ -1,94 +1,114 @@
-return{
-    descriptions = {
-        back ={
-            
-        },
-        Joker = {
-            j_mot_blobbyJ = {
-                name = "Blobby",
-                text = {
-                    "Every time a steel card is held in hand:",
-                    "Exponentiate Mult from {X:mult,C:white}^.5{} to {X:mult,C:white}^3{}",
-                    "{C:inactive}Art + Concept by inspectnerd{}",
-                }
-            },
+return {
+  descriptions = {
+    Back = {
 
-            j_mot_jinxJ = {
-                name = "Jinx",
-                text = {
-                    "Gives {X:mult,C:white}X#1#{} Mult.",
-                    "Increase by {X:mult,C:white}+#2#X{} at end of boss blind.",
-                    "Then increase gain by 1 at end of boss blind.",
-                    "{C:inactive}Art + Concept by jinxfucks{}",
-                }
-            },
-
-            j_mot_altxxJ = {
-                name = "Alt X.X",
-                text = {
-                    "Retrigger all {V:1}#1#{} cards twice",
-                    "{C:inactive}Suit changes at end of round{}"
-                }
-            },
-
-            j_mot_titanJ = {
-                name = "Titan",
-                text = {
-                    "Gives {X:mult,C:white}X#1#{} Mult for every",
-                    "{C:spade}Spade{} card played and scored."
-                }
-            },
-
-            j_mot_censoredJokerJ = {
-                name = "Censored Joker",
-                text = {
-                    "Gives {X:mult,C:white}X#1#{} Mult.",
-                    "Increase by {X:mult,C:white}X#2#{} when selling a card.",
-                    "Increase by {X:mult,C:white}X#3#{} when rerolling the shop.",
-                    '{C:inactive}"Literally 1984" - The Blood Moth.{}'
-                }
-            },
-
-            j_mot_rekojJ = {
-                name = "Rekoj",
-                text = {
-                    "{C:chips}+#1#{} Chips",
-                    '{C:inactive}"Oh no, it\'s Jimbo\'s evil cousin, Obmij!{}'
-                }
-            },
-
-            j_mot_winningbigJ = {
-                name = "Winning Big",
-                text = {
-                    "Gives {C:money}$#1#{} at end of round,",
-                    "increases by {C:money}$#2#{} every time a lucky card triggers."
-                }
-            },
-        },
-
-        Spectral = {
-            c_mot_bermuda = {
-                name = "Bermuda",
-                text = {
-                    "Summon an Omega Joker,",
-                    "sets money to {C:money}-$20{}",
-                    "{C:inactive}Must have room{}"
-                }
-            }
+    },
+    Joker = {
+      j_mot_blobbyJ = {
+        name = "Blobby",
+        text = {
+          "Every time a steel card is held in hand:",
+          "Exponentiate Mult from {X:mult,C:white}^.5{} to {X:mult,C:white}^3{}",
+          "{C:inactive}Art + Concept by inspectnerd{}",
         }
+      },
+
+      j_mot_jinxJ = {
+        name = "Jinx",
+        text = {
+          "Gives {X:mult,C:white}X#1#{} Mult.",
+          "Increase by {X:mult,C:white}+#2#X{} at end of boss blind.",
+          "Then increase gain by 1 at end of boss blind.",
+          "{C:inactive}Art + Concept by jinxfucks{}",
+        }
+      },
+
+      j_mot_altxxJ = {
+        name = "Alt X.X",
+        text = {
+          "Retrigger all {V:1}#1#{} cards twice",
+          "{C:inactive}Suit changes at end of round{}"
+        }
+      },
+
+      j_mot_titanJ = {
+        name = "Titan",
+        text = {
+          "Gives {X:mult,C:white}X#1#{} Mult for every",
+          "{C:spade}Spade{} card played and scored."
+        }
+      },
+
+      j_mot_censoredJokerJ = {
+        name = "Censored Joker",
+        text = {
+          "Gives {X:mult,C:white}X#1#{} Mult.",
+          "Increase by {X:mult,C:white}X#2#{} when selling a card.",
+          "Increase by {X:mult,C:white}X#3#{} when rerolling the shop.",
+          '{C:inactive}"Literally 1984" - The Blood Moth.{}'
+        }
+      },
+
+      j_mot_rekojJ = {
+        name = "Rekoj",
+        text = {
+          "{C:chips}+#1#{} Chips",
+          '{C:inactive}"Oh no, it\'s Jimbo\'s evil cousin, Obmij!{}'
+        }
+      },
+
+      j_mot_winningbigJ = {
+        name = "Winning Big",
+        text = {
+          "Gives {C:money}$#1#{} at end of round,",
+          "increases by {C:money}$#2#{} every time a lucky card triggers."
+        }
+      },
+
+      j_mot_reinforcedGlassJ = {
+        name = "Reinforced Glass",
+        text = {
+          "Prevents scoring {C:attention}glass{} cards from",
+          "shattering at end of round."
+        }
+      },
+
+      j_mot_medusaJ = {
+        name = "Medusa",
+        text = {
+          "All played {C:attention}face{} cards",
+          "become {C:attention}Stone{} cards",
+          "when scored",
+          " ",
+          "If all scoring cards are stone cards",
+          "{C:red,s:1.1}+#1#{} Mult, then {C:red,s:1.1}x#2#{} Mult",
+        }
+      },
     },
 
-        misc = {
-            labels = {
-                k_mot_superb = {"Superb"},
-                k_mot_omega = {"Omega"},
-            },
-  
-            dictionary = {
-            k_mot_superb = {"Superb"},
-            k_mot_omega = {"Omega"},
-            }
+    Spectral = {
+      c_mot_bermuda = {
+        name = "Bermuda",
+        text = {
+          "Summon an Omega Joker,",
+          "sets money to {C:money}-$20{}",
+          "{C:inactive}Must have room{}"
+        }
+      }
+    }
+  },
 
-        },
+  misc = {
+    labels = {
+      k_mot_superb = { "Superb" },
+      k_mot_omega = { "Omega" },
+    },
+
+    dictionary = {
+      k_mot_superb = { "Superb" },
+      k_mot_omega = { "Omega" },
+    }
+
+  },
 
 }
