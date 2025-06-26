@@ -24,7 +24,7 @@ SMODS.Joker {
     soul_pos = {x = 1, y = 0},
     rarity = 4,
     atlas = "LegendJ",
-    config = {extra = {X_mult = 1, mult_mod = 1}},
+    config = {extra = {X_mult = 2, mult_mod = 1}},
     cost = 20,
     blueprint_compat = true,
     loc_vars = function (self, info_queue, card)

@@ -23,7 +23,7 @@ if not ModofTheseus then
 end
 
 ModofTheseus = {
-    show_options_button = true,
+  show_options_button = true,
 }
 
 ModofTheseus = SMODS.current_mod
@@ -52,12 +52,34 @@ SMODS.Atlas {
     py = 95
 }
 
-SMODS.Atlas {
-    key = "UncommonJ",
-    path = "UncommonJokers.png",
-    px = 71,
-    py = 95
-}
+
+SMODS.Atlas({
+  key = "UncommonJ",
+  path = "UncommonJokers.png",
+  px = 71,
+  py = 95
+})
+
+SMODS.Atlas({
+  key = "ReinforcedGlassJoker",
+  path = "ReinforcedGlassJoker.png",
+  px = 71,
+  py = 95
+})
+
+SMODS.Atlas({
+  key = "MedusaJ",
+  path = "MedusaJoker.png",
+  px = 71,
+  py = 95
+})
+
+SMODS.Atlas({
+  key = "GlassEnhancement",
+  path = "GlassEnhancement.png",
+  px = 71,
+  py = 95
+})
 
 SMODS.Atlas {
     key = "RareJ",

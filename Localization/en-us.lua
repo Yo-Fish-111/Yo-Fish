@@ -74,14 +74,34 @@ return {
                 },
             },
 
-            j_mot_winningbigJ = {
-                name = "Winning Big",
-                text = {
-                    "Gives {C:money}$#1#{} at end of round,",
-                    "increases by {C:money}$#2#{} every time a lucky card triggers."
-                },
-            },
-        },
+      j_mot_winningbigJ = {
+        name = "Winning Big",
+        text = {
+          "Gives {C:money}$#1#{} at end of round,",
+          "increases by {C:money}$#2#{} every time a lucky card triggers."
+        }
+      },
+
+      j_mot_reinforcedGlassJ = {
+        name = "Reinforced Glass",
+        text = {
+          "Prevents scoring {C:attention}glass{} cards from",
+          "{C:red,E:1,S:1.1}shattering{} at end of round."
+        }
+      },
+
+      j_mot_medusaJ = {
+        name = "Medusa",
+        text = {
+          "All played {C:attention}face{} cards",
+          "become {C:attention}Stone{} cards",
+          "when scored",
+          " ",
+          "If all scoring cards are stone cards",
+          "{C:red,s:1.1}+#1#{} Mult, then {C:red,s:1.1}x#2#{} Mult",
+        }
+      },
+    },
 
         Spectral = {
             c_mot_bermuda = {
@@ -95,15 +115,22 @@ return {
         },
     },
 
-    misc = {
-        dictionary = {
-            k_mot_superb = {"Superb"},
-            k_mot_omega = {"Omega"},
-        },
-
-        labels = {
-            k_mot_superb = {"Superb"},
-            k_mot_omega = {"Omega"},
-        },
+  misc = {
+    labels = {
+      k_mot_superb = { "Superb" },
+      k_mot_omega = { "Omega" },
     },
+
+    dictionary = {
+      k_mot_superb = { "Superb" },
+      k_mot_omega = { "Omega" },
+    },
+
+    v_dictionary = {
+      mot_stone_singular = { "+#1# Stone" },
+      mot_stone_plural = { "+#1# Stones" },
+      mot_glass_saved = { "Saved!" },
+    }
+  },
+
 }
