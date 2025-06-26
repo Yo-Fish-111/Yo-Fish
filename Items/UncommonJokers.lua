@@ -29,7 +29,7 @@ SMODS.Joker {
     return { vars = { card.ability.extra.X_mult, card.ability.extra.mult_modSell, card.ability.extra.mult_modRoll } }
   end,
   calculate = function(self, card, context)
-    if context.reroll_shop then
+    if context.reroll_shop and not context.blueprint then
       card.ability.extra.X_mult = card.ability.extra.X_mult + card.ability.extra.mult_modRoll
       return {
         message = localize 'k_upgrade_ex',
@@ -37,7 +37,7 @@ SMODS.Joker {
         message_card = card
       }
     end
-    if context.selling_card then
+    if context.selling_card and not context.blueprint then
       card.ability.extra.X_mult = card.ability.extra.X_mult + card.ability.extra.mult_modSell
       return {
         message = localize 'k_upgrade_ex',
