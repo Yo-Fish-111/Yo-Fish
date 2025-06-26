@@ -69,7 +69,7 @@ return {
         name = "Reinforced Glass",
         text = {
           "Prevents scoring {C:attention}glass{} cards from",
-          "shattering at end of round."
+          "{C:red,E:1,S:1.1}shattering{} at end of round."
         }
       },
 
