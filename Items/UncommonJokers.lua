@@ -51,13 +51,12 @@ SMODS.Joker {
   end
 }
 
+
 SMODS.Joker({
   key = "reinforcedGlassJ",
   pos = { x = 1, y = 0 },
   rarity = 2,
-  -- TODO: add to a proper atlas file
-  -- TODO: VVVVVVVVVVVVVVVVVVVVVVVVVV
-  atlas = "ReinforcedGlassJoker",
+  atlas = "PLH",
   cost = 4,
   blueprint_compat = false,
   unlocked = true

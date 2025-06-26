@@ -61,13 +61,6 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
-  key = "ReinforcedGlassJoker",
-  path = "ReinforcedGlassJoker.png",
-  px = 71,
-  py = 95
-})
-
-SMODS.Atlas({
   key = "MedusaJ",
   path = "MedusaJoker.png",
   px = 71,
