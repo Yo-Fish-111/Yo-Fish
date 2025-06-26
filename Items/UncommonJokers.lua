@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Skill Picker Reborn; if not, see <https://www.gnu.org/licenses/>.
+ * along with Mod of Theseus; if not, see <https://www.gnu.org/licenses/>.
 ]]
 SMODS.Joker {
   key = "censoredJokerJ",
@@ -32,7 +32,7 @@ SMODS.Joker {
     if context.reroll_shop and not context.blueprint then
       card.ability.extra.X_mult = card.ability.extra.X_mult + card.ability.extra.mult_modRoll
       return {
-        message = localize 'k_upgrade_ex',
+        message = localize('k_upgrade_ex'),
         colour = G.C.MULT,
         message_card = card
       }
@@ -40,7 +40,7 @@ SMODS.Joker {
     if context.selling_card and not context.blueprint then
       card.ability.extra.X_mult = card.ability.extra.X_mult + card.ability.extra.mult_modSell
       return {
-        message = localize 'k_upgrade_ex',
+        message = localize('k_upgrade_ex'),
         colour = G.C.MULT,
         message_card = card
       }
@@ -53,7 +53,7 @@ SMODS.Joker {
 
 SMODS.Joker({
   key = "reinforcedGlassJ",
-  pos = { x = 0, y = 0 },
+  pos = { x = 1, y = 0 },
   rarity = 2,
   -- TODO: add to a proper atlas file
   -- TODO: VVVVVVVVVVVVVVVVVVVVVVVVVV
