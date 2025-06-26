@@ -107,8 +107,13 @@ return {
     dictionary = {
       k_mot_superb = { "Superb" },
       k_mot_omega = { "Omega" },
-    }
+    },
 
+    v_dictionary = {
+      mot_stone_singular = { "+#1# Stone" },
+      mot_stone_plural = { "+#1# Stones" },
+      mot_glass_saved = { "Saved!" },
+    }
   },
 
 }

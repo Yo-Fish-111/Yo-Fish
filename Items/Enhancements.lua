@@ -18,10 +18,12 @@ SMODS.Enhancement:take_ownership("glass", {
             }))
           end
 
+          print(localize("mot_glass_saved"))
+
           return {
             message_card = card,
-            -- TODO: add proper localization
-            message = "Saved!"
+            -- NOTE: ugly localization hack. don't remove
+            message = localize({ type = "variable", key = "mot_glass_saved", vars = {} })
           }
         end
 

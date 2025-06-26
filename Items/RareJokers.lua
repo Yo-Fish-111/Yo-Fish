@@ -41,19 +41,19 @@ SMODS.Joker({
   loc_vars = function(_self, _info_queue, card)
     return {
       vars = {
-        mult = card.ability.extra.mult,
-        x_mult = card.ability.extra.x_mult,
+        card.ability.extra.mult,
+        card.ability.extra.x_mult,
       }
     }
   end,
   blueprint_compat = true,
   calculate = function(_self, card, context)
     if context.before and context.main_eval and not context.blueprint and context.scoring_hand then
-      -- local faces = 0
+      local faces = 0
 
       for _, scored_card in ipairs(context.scoring_hand) do
         if scored_card:is_face() then
-          -- faces = faces + 1
+          faces = faces + 1
           scored_card:set_ability("m_stone", nil, true)
           G.E_MANAGER:add_event(Event({
             func = function()
@@ -64,12 +64,17 @@ SMODS.Joker({
         end
       end
 
-      -- if faces > 0 then
-      --   return {
-      --     message = localize('k_plus_stone'),
-      --     colour = G.C.GREY
-      --   }
-      -- end
+      if faces > 0 then
+        return {
+          message = localize({
+            type = "variable",
+            key = faces == 1 and "mot_stone_singular" or "mot_stone_plural",
+            vars = { faces }
+          }),
+          message_card = card,
+          colour = G.C.GREY
+        }
+      end
     end
 
 
