@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 --[[
  * UncommonJokers.lua
  * This file is part of Mod of Theseus
@@ -50,7 +49,6 @@ SMODS.Joker {
         if context.joker_main then
             return {xmult = card.ability.extra.X_mult}
         end
-=======
 SMODS.Joker {
   key = "censoredJokerJ",
   pos = { x = 0, y = 0 },
@@ -70,7 +68,6 @@ SMODS.Joker {
         colour = G.C.MULT,
         message_card = card
       }
->>>>>>> b55b326d21df766339fcb90325f42c05e585346b
     end
     if context.selling_card then
       card.ability.extra.X_mult = card.ability.extra.X_mult + card.ability.extra.mult_modSell
