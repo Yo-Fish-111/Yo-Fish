@@ -40,6 +40,23 @@ SMODS.Joker{
         if context.repetition and context.other_card:is_suit(G.GAME.current_round.ancient_card.suit) and context.cardarea == G.play then
             return {repetitions = card.ability.extra.repetitions}
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        ---@type JDJokerDefinition
+        return {
+            reminder_text = {
+                { text = "[" },
+                { ref_table = "G.GAME.current_round.ancient_card", ref_value = "suit" },
+                { text = "]" },
+            },
+            style_function = function(card, text, reminder_text, extra)
+                if reminder_text and reminder_text.children[2] then
+                    reminder_text.children[2].config.colour = lighten(G.C.SUITS[G.GAME.current_round.ancient_card.suit], 0.35)
+                end
+                return false
+            end
+        }
     end
 
 }
