@@ -1,3 +1,6 @@
+# Mod of Theseus
+A WIP Balatro mod.
+
 # TO-DO
 - explain how the shaders work internally and what the values in the file do
 - Examples for
@@ -9,3 +12,6 @@
   - how to make a Seal
   - add a keybind
   - make a stake and add an effect for it
+
+# Credits
+tba
