@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 --[[
  * UncommonJokers.lua
  * This file is part of Mod of Theseus
@@ -18,39 +17,6 @@
  * You should have received a copy of the GNU General Public License
  * along with Skill Picker Reborn; if not, see <https://www.gnu.org/licenses/>.
 ]]
-
-SMODS.Joker {
-    key = "censoredJokerJ",
-    pos = {x = 0, y = 0},
-    rarity = 2,
-    atlas = "UncommonJ",
-    config = {extra = {X_mult = 1, mult_modSell = .01, mult_modRoll = .05}},
-    cost = 8,
-    blueprint_compat = true,
-    loc_vars = function(self, info_queue, card)
-        return {vars = {card.ability.extra.X_mult, card.ability.extra.mult_modSell, card.ability.extra.mult_modRoll}}
-    end,
-    calculate = function(self, card, context)
-        if context.reroll_shop then
-            card.ability.extra.X_mult = card.ability.extra.X_mult + card.ability.extra.mult_modRoll
-            return{
-                message = localize'k_upgrade_ex',
-                colour = G.C.MULT,
-                message_card = card
-            }
-        end
-        if context.selling_card then
-             card.ability.extra.X_mult = card.ability.extra.X_mult + card.ability.extra.mult_modSell
-            return{
-                message = localize'k_upgrade_ex',
-                colour = G.C.MULT,
-                message_card = card
-            }
-        end
-        if context.joker_main then
-            return {xmult = card.ability.extra.X_mult}
-        end
-=======
 SMODS.Joker {
   key = "censoredJokerJ",
   pos = { x = 0, y = 0 },
@@ -70,7 +36,6 @@ SMODS.Joker {
         colour = G.C.MULT,
         message_card = card
       }
->>>>>>> b55b326d21df766339fcb90325f42c05e585346b
     end
     if context.selling_card then
       card.ability.extra.X_mult = card.ability.extra.X_mult + card.ability.extra.mult_modSell
