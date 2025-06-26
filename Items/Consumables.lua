@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Skill Picker Reborn; if not, see <https://www.gnu.org/licenses/>.
+ * along with Mod of Theseus; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
 SMODS.Consumable {
@@ -38,3 +38,30 @@ SMODS.Consumable {
         end
     end
 }
+
+SMODS.ConsumableType({
+    object_type = "ConsumableType",
+    key = "Theseus",
+	primary_colour = HEX("dbc6a0"),
+	secondary_colour = HEX("dbc6a0"),
+    collection_rows = { 4, 4 },
+    shop_rate = 0.0,
+	loc_txt = {
+		collection = 'Theseus Cards',
+		name = 'Theseus'
+	},
+    default = "c_mot_ancient_oars",
+    can_stack = true,
+    can_divide = true,
+})
+
+SMODS.Consumable({
+    key = "mot_ancient_oars",
+    set = "Theseus",
+    atlas = "PLH",
+    pos = {x = 0, y = 0},
+    loc_txt = {
+        name = "Ancient Oars",
+        text = { "Something something" },
+    }
+})

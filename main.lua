@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Skill Picker Reborn; if not, see <https://www.gnu.org/licenses/>.
+ * along with Mod of Theseus; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
 if not ModofTheseus then
@@ -56,13 +56,6 @@ SMODS.Atlas {
 SMODS.Atlas({
   key = "UncommonJ",
   path = "UncommonJokers.png",
-  px = 71,
-  py = 95
-})
-
-SMODS.Atlas({
-  key = "ReinforcedGlassJoker",
-  path = "ReinforcedGlassJoker.png",
   px = 71,
   py = 95
 })
@@ -122,3 +115,4 @@ assert(SMODS.load_file("Items/LegendaryJokers.lua"))()
 assert(SMODS.load_file("Items/OmegaJokers.lua"))()
 assert(SMODS.load_file("Items/RareJokers.lua"))()
 assert(SMODS.load_file("Items/UncommonJokers.lua"))()
+assert(SMODS.load_file("Items/Boosters.lua"))()
