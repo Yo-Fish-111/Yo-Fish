@@ -65,14 +65,3 @@ SMODS.Joker {
   end
 
 }
-
-
-SMODS.Joker({
-  key = "reinforcedGlassJ",
-  pos = { x = 1, y = 0 },
-  rarity = 2,
-  atlas = "PLH",
-  cost = 4,
-  blueprint_compat = false,
-  unlocked = true
-})
