@@ -70,7 +70,7 @@ return {
                 name = "Rekoj",
                 text = {
                     "{C:chips}+#1#{} Chips",
-                    '{C:inactive}"Oh no, it\'s Jimbo\'s evil cousin, Obmij!{}'
+                    '{C:inactive}"Oh no, it\'s Jimbo\'s evil cousin, Obmij!"{}'
                 },
             },
 
