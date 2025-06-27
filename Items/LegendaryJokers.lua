@@ -38,8 +38,21 @@ SMODS.Joker {
             card.ability.extra.X_mult = card.ability.extra.X_mult + card.ability.extra.mult_mod
             card.ability.extra.mult_mod = card.ability.extra.mult_mod + 1
         end
-    end
+    end,
 
+    joker_display_def = function(JokerDisplay)
+        ---@type JDJokerDefinition
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        { ref_table = "card.ability.extra", ref_value = "X_mult", retrigger_type = "exp" }
+                    }
+                }
+            },
+        }
+    end
 }
 
 SMODS.Joker {
@@ -58,8 +71,29 @@ SMODS.Joker {
 
     calculate = function (self, card, context)
         if context.repetition and context.other_card:is_suit(G.GAME.current_round.ancient_card.suit) and context.cardarea == G.play then
-            return {repetitions = card.ability.extra.repetitions}
+            return { message = 'Again!', repetitions = card.ability.extra.repetitions }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        ---@type JDJokerDefinition
+        return {
+            reminder_text = {
+                { text = "(" },
+                { ref_table = "G.GAME.current_round.ancient_card", ref_value = "suit" },
+                { text = ")" },
+            },
+            style_function = function(card, text, reminder_text, extra)
+                if reminder_text and reminder_text.children[2] then
+                    reminder_text.children[2].config.colour = lighten(G.C.SUITS[G.GAME.current_round.ancient_card.suit], 0.35)
+                end
+                return false
+            end,
+            retrigger_function = function(playing_card, scoring_hand, held_in_hand, joker_card)
+                if held_in_hand then return 0 end
+                return playing_card:is_suit(G.GAME.current_round.ancient_card.suit) and JokerDisplay.calculate_joker_triggers(joker_card) * joker_card.ability.extra.repetitions or 0
+            end
+        }
     end
 
 }
@@ -80,6 +114,38 @@ SMODS.Joker {
         if context.individual and context.other_card:is_suit("Spades") and context.cardarea == G.play then
             return {xmult = card.ability.extra.X_mult}
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        ---@type JDJokerDefinition
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        { ref_table = "card.joker_display_values", ref_value = "x_mult", retrigger_type = "exp" }
+                    }
+                }
+            },
+            reminder_text = {
+                { text = "(" },
+                { ref_table = "card.joker_display_values", ref_value = "localized_text", colour = lighten(G.C.SUITS["Spades"], 0.35) },
+                { text = ")" }
+            },
+            calc_function = function(card)
+                local count = 0
+                local text, _, scoring_hand = JokerDisplay.evaluate_hand()
+                if text ~= 'Unknown' then
+                    for _, scoring_card in pairs(scoring_hand) do
+                        if scoring_card:is_suit("Spades") then
+                            count = count + JokerDisplay.calculate_card_triggers(scoring_card, scoring_hand)
+                        end
+                    end
+                end
+                card.joker_display_values.x_mult = card.ability.extra.X_mult ^ count
+                card.joker_display_values.localized_text = localize("Spades", 'suits_plural')
+            end,
+        }
     end
 }
 
