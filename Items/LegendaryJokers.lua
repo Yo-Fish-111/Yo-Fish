@@ -147,6 +147,55 @@ SMODS.Joker {
             end,
         }
     end
+}
 
+--The person who helped me with this function told me to add it outside the Joker object
+--Not sure if it's a good idea or not but since it's global I think, you can use this with other legendaries too
+local original_level_up_hand = level_up_hand
+function level_up_hand(card, hand, instant, amount)
+    original_level_up_hand(card, hand, instant, amount)
 
+    SMODS.calculate_context({upgrade_hand = (amount >= 1), hand = hand})
+end
+
+SMODS.Joker{
+    key = "victoryJ",
+    pos = {x = 6, y = 0},
+    rarity = 4,
+    atlas = "LegendJ",
+    blueprint_compat = true,
+    config = {extra = {
+        X_chips = 1,
+        X_chips_gain1 = 0.5,
+        X_chips_gain2 = 2
+    }},
+    cost = 20,
+    loc_vars = function(self, info_queue, card)
+        return {vars = {card.ability.extra.X_chips, card.ability.extra.X_chips_gain1, card.ability.extra.X_chips_gain2}}
+    end,
+    
+    calculate = function(self, card, context)
+        if context.before and next(context.poker_hands['Straight']) then
+            card.ability.extra.X_chips = card.ability.extra.X_chips + card.ability.extra.X_chips_gain1
+            return {
+                message = 'Upgraded!',
+			    colour = G.C.BLUE
+            }
+        end
+
+        --This is where that calculate_context comes into play
+        if context.upgrade_hand and context.hand == "Straight" then
+            card.ability.extra.X_chips = card.ability.extra.X_chips + card.ability.extra.X_chips_gain2
+            return {
+                message = 'Upgraded!',
+			    colour = G.C.BLUE
+            }
+        end
+
+        if context.joker_main then
+            return {
+                xchips = card.ability.extra.X_chips
+            }
+        end
+    end
 }
