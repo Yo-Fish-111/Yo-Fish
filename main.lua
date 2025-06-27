@@ -135,3 +135,5 @@ assert(SMODS.load_file("Items/RareJokers.lua"))()
 assert(SMODS.load_file("Items/UncommonJokers.lua"))()
 assert(SMODS.load_file("Items/Boosters.lua"))()
 assert(SMODS.load_file("Items/Enhancements.lua"))()
+assert(SMODS.load_file("contexts.lua"))()
+assert(SMODS.load_file("utils.lua"))() -- not technically used yet, but don't remove it. *cough cough* seph *cough cough* /lh
