@@ -6,7 +6,7 @@ SMODS.Blind {
     boss = {min = 1},
     boss_colour = HEX('c3e1ed'),
     recalc_debuff = function(self, card, from_blind)
-        return card.area == G.deck and not G.GAME.blind.disabled
+        return card.area ~= G.jokers and not G.GAME.blind.disabled
     end,
     modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
         for k, v in ipairs(cards) do
