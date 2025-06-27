@@ -33,7 +33,7 @@ return {
                 name = "The Demon",
                 text = {
                     "Played cards have a",
-                    "#1# in #2# chance to",
+                    "#1# in 3 chance to",
                     "become debuffed",
                 },
             },

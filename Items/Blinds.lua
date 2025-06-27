@@ -23,9 +23,23 @@ SMODS.Blind {
     discovered = true,
     boss = {min = 3},
     boss_colour = HEX("a1261d"),
+    loc_vars = function(self)
+        return {
+            vars = {
+                G.GAME.probabilities.normal,
+            },
+        }
+    end,
+    collection_loc_vars = function(self)
+        return {
+            vars = {
+                1,
+            },
+        }
+    end,
     modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
         for k, v in ipairs(cards) do
-            if not G.GAME.blind.disabled and (pseudorandom(pseudoseed("demon")) < (G.GAME.probabilities.normal / 2)) then
+            if not G.GAME.blind.disabled and (pseudorandom(pseudoseed("demon")) < (G.GAME.probabilities.normal / 3)) then
                 v:set_debuff(true)
             end
         end
