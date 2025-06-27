@@ -1,4 +1,4 @@
-SMODS.Blind {
+SMODS.Blind { -- by sephdotwav, art by inspectnerd
     key = 'angel',
     atlas = 'Blinds',
     pos = {y = 1},
@@ -16,7 +16,7 @@ SMODS.Blind {
     end,
 }
 
-SMODS.Blind {
+SMODS.Blind { -- by sephdotwav, art by inspectnerd
     key = "demon",
     atlas = "Blinds",
     pos = {y = 0},
@@ -47,7 +47,7 @@ SMODS.Blind {
     end,
 }
 
-SMODS.Blind {
+SMODS.Blind { -- by sephdotwav, art by inspectnerd
     key = "lapis_loupe",
     atlas = "BlindsFinisher",
     pos = {y = 0},
