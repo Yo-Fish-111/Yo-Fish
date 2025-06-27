@@ -1,4 +1,8 @@
 {
+  "workspace.library": [
+    "../smods",
+    "../lovely"
+  ]
     "workspace.library": [
         "../smods",
         "../Steamodded",

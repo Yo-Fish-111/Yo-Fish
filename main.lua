@@ -52,7 +52,6 @@ SMODS.Atlas {
     py = 95
 }
 
-
 SMODS.Atlas({
   key = "UncommonJ",
   path = "UncommonJokers.png",
@@ -95,6 +94,24 @@ SMODS.Atlas {
     py = 95,
 }
 
+SMODS.Atlas {
+    key = 'Blinds',
+    path = 'Blinds.png',
+    px = 34,
+    py = 34,
+    frames = 21,
+    atlas_table = 'ANIMATION_ATLAS'
+}
+
+SMODS.Atlas {
+    key = 'BlindsFinisher',
+    path = 'BlindsFinisher.png',
+    px = 34,
+    py = 34,
+    frames = 21,
+    atlas_table = 'ANIMATION_ATLAS'
+}
+
 SMODS.Rarity {
     key = "superb",
     pools = {["Joker"] = true},
@@ -109,6 +126,7 @@ SMODS.Rarity {
     badge_colour = HEX('000000'),
 }
 
+assert(SMODS.load_file("Items/Blinds.lua"))()
 assert(SMODS.load_file("Items/CommonJokers.lua"))()
 assert(SMODS.load_file("Items/Consumables.lua"))()
 assert(SMODS.load_file("Items/LegendaryJokers.lua"))()
