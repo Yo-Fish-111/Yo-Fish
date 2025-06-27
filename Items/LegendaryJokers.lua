@@ -38,8 +38,21 @@ SMODS.Joker {
             card.ability.extra.X_mult = card.ability.extra.X_mult + card.ability.extra.mult_mod
             card.ability.extra.mult_mod = card.ability.extra.mult_mod + 1
         end
-    end
+    end,
 
+    joker_display_def = function(JokerDisplay)
+        ---@type JDJokerDefinition
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        { ref_table = "card.ability.extra", ref_value = "X_mult", retrigger_type = "exp" }
+                    }
+                }
+            },
+        }
+    end
 }
 
 SMODS.Joker {
