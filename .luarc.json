@@ -1,8 +1,8 @@
 {
-    "workspace.library": [
-        "../smods",
-        "../Steamodded",
-        "../lovely",
-        "../JokerDisplay"
-    ]
+  "workspace.library": [
+    "../smods",
+    "../Steamodded",
+    "../lovely",
+    "../JokerDisplay"
+  ]
 }
