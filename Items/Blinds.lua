@@ -1,17 +1,10 @@
 SMODS.Blind {
     key = 'angel',
-    loc_txt = {
-        name = "The Angel",
-        text = {
-            "Cards are debuffed",
-            "until play",
-        },
-    },
-    atlas = 'test_blinds',
-    pos = {y = 2},
+    atlas = 'Blinds',
+    pos = {y = 1},
     discovered = true,
     boss = {min = 1},
-    boss_colour = HEX('bbbbbb'),
+    boss_colour = HEX('c3e1ed'),
     recalc_debuff = function(self, card, from_blind)
         return card.area == G.deck and not G.GAME.blind.disabled
     end,
@@ -25,19 +18,11 @@ SMODS.Blind {
 
 SMODS.Blind {
     key = "demon",
-    loc_txt = {
-        name = "The Demon",
-        text = {
-            "Played cards have a",
-            "1 in 2 chance to",
-            "become debuffed",
-        },
-    },
-    atlas = "test_blinds",
-    pos = {y = 5},
+    atlas = "Blinds",
+    pos = {y = 0},
     discovered = true,
     boss = {min = 3},
-    boss_colour = HEX("ff553e"),
+    boss_colour = HEX("a1261d"),
     modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
         for k, v in ipairs(cards) do
             if not G.GAME.blind.disabled and (pseudorandom(pseudoseed("demon")) < (G.GAME.probabilities.normal / 2)) then
@@ -50,19 +35,12 @@ SMODS.Blind {
 
 SMODS.Blind {
     key = "lapis_loupe",
-    loc_txt = {
-        name = "Lapis Loupe",
-        text = {
-            "Play only your best",
-            "possible hand",
-        },
-    },
-    atlas_table = "test_blinds_finisher",
-    pos = {y = 2},
+    atlas = "BlindsFinisher",
+    pos = {y = 0},
     discovered = true,
     mult = 5,
     boss = {showdown = true},
-    boss_colour = HEX("0000FF"),
+    boss_colour = HEX("1c53a8"),
     set_blind = function(self)
         self.hands_sub = G.GAME.round_resets.hands - 1
         ease_hands_played(-self.hands_sub)
