@@ -3,4 +3,10 @@
     "../smods",
     "../lovely"
   ]
+    "workspace.library": [
+        "../smods",
+        "../Steamodded",
+        "../lovely",
+        "../JokerDisplay"
+    ]
 }

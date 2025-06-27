@@ -38,8 +38,21 @@ SMODS.Joker {
             card.ability.extra.X_mult = card.ability.extra.X_mult + card.ability.extra.mult_mod
             card.ability.extra.mult_mod = card.ability.extra.mult_mod + 1
         end
-    end
+    end,
 
+    joker_display_def = function(JokerDisplay)
+        ---@type JDJokerDefinition
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        { ref_table = "card.ability.extra", ref_value = "X_mult", retrigger_type = "exp" }
+                    }
+                }
+            },
+        }
+    end
 }
 
 SMODS.Joker {
@@ -58,8 +71,29 @@ SMODS.Joker {
 
     calculate = function (self, card, context)
         if context.repetition and context.other_card:is_suit(G.GAME.current_round.ancient_card.suit) and context.cardarea == G.play then
-            return {repetitions = card.ability.extra.repetitions}
+            return { message = 'Again!', repetitions = card.ability.extra.repetitions }
         end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        ---@type JDJokerDefinition
+        return {
+            reminder_text = {
+                { text = "(" },
+                { ref_table = "G.GAME.current_round.ancient_card", ref_value = "suit" },
+                { text = ")" },
+            },
+            style_function = function(card, text, reminder_text, extra)
+                if reminder_text and reminder_text.children[2] then
+                    reminder_text.children[2].config.colour = lighten(G.C.SUITS[G.GAME.current_round.ancient_card.suit], 0.35)
+                end
+                return false
+            end,
+            retrigger_function = function(playing_card, scoring_hand, held_in_hand, joker_card)
+                if held_in_hand then return 0 end
+                return playing_card:is_suit(G.GAME.current_round.ancient_card.suit) and JokerDisplay.calculate_joker_triggers(joker_card) * joker_card.ability.extra.repetitions or 0
+            end
+        }
     end
 
 }
@@ -79,6 +113,89 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.individual and context.other_card:is_suit("Spades") and context.cardarea == G.play then
             return {xmult = card.ability.extra.X_mult}
+        end
+    end,
+
+    joker_display_def = function(JokerDisplay)
+        ---@type JDJokerDefinition
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        { ref_table = "card.joker_display_values", ref_value = "x_mult", retrigger_type = "exp" }
+                    }
+                }
+            },
+            reminder_text = {
+                { text = "(" },
+                { ref_table = "card.joker_display_values", ref_value = "localized_text", colour = lighten(G.C.SUITS["Spades"], 0.35) },
+                { text = ")" }
+            },
+            calc_function = function(card)
+                local count = 0
+                local text, _, scoring_hand = JokerDisplay.evaluate_hand()
+                if text ~= 'Unknown' then
+                    for _, scoring_card in pairs(scoring_hand) do
+                        if scoring_card:is_suit("Spades") then
+                            count = count + JokerDisplay.calculate_card_triggers(scoring_card, scoring_hand)
+                        end
+                    end
+                end
+                card.joker_display_values.x_mult = card.ability.extra.X_mult ^ count
+                card.joker_display_values.localized_text = localize("Spades", 'suits_plural')
+            end,
+        }
+    end
+}
+
+--The person who helped me with this function told me to add it outside the Joker object
+--Not sure if it's a good idea or not but since it's global I think, you can use this with other legendaries too
+local original_level_up_hand = level_up_hand
+function level_up_hand(card, hand, instant, amount)
+    original_level_up_hand(card, hand, instant, amount)
+
+    SMODS.calculate_context({upgrade_hand = (amount >= 1), hand = hand})
+end
+
+SMODS.Joker{
+    key = "victoryJ",
+    pos = {x = 6, y = 0},
+    rarity = 4,
+    atlas = "LegendJ",
+    blueprint_compat = true,
+    config = {extra = {
+        X_chips = 1,
+        X_chips_gain1 = 0.5,
+        X_chips_gain2 = 2
+    }},
+    cost = 20,
+    loc_vars = function(self, info_queue, card)
+        return {vars = {card.ability.extra.X_chips, card.ability.extra.X_chips_gain1, card.ability.extra.X_chips_gain2}}
+    end,
+    
+    calculate = function(self, card, context)
+        if context.before and next(context.poker_hands['Straight']) then
+            card.ability.extra.X_chips = card.ability.extra.X_chips + card.ability.extra.X_chips_gain1
+            return {
+                message = 'Upgraded!',
+			    colour = G.C.BLUE
+            }
+        end
+
+        --This is where that calculate_context comes into play
+        if context.upgrade_hand and context.hand == "Straight" then
+            card.ability.extra.X_chips = card.ability.extra.X_chips + card.ability.extra.X_chips_gain2
+            return {
+                message = 'Upgraded!',
+			    colour = G.C.BLUE
+            }
+        end
+
+        if context.joker_main then
+            return {
+                xchips = card.ability.extra.X_chips
+            }
         end
     end
 }
