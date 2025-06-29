@@ -62,13 +62,13 @@ SMODS.Joker {
   rarity = 4,
   atlas = "LegendJ",
   blueprint_compat = true,
-  config = { extra = { repetitions = 2 } },
+  config = { extra = { repetitions = 2 }, immutable = { max_repetitions = 25 } },
   cost = 20,
   loc_vars = function(self, info_queue, card)
     local suit = (G.GAME.current_round.ancient_card or {}).suit or 'Spades'
     return {
       vars = {
-        card.ability.extra.repetitions,
+        math.min(card.ability.immutable.max_retriggers, card.ability.extra.retriggers),
         localize(suit, 'suits_singular'),
         colours = { G.C.SUITS[suit] },
       }
@@ -77,7 +77,8 @@ SMODS.Joker {
 
   calculate = function(self, card, context)
     if context.repetition and context.other_card:is_suit(G.GAME.current_round.ancient_card.suit) and context.cardarea == G.play then
-      return { message = 'Again!', repetitions = card.ability.extra.repetitions }
+      return { message = 'Again!', repetitions = math.min(card.ability.immutable.max_retriggers,
+        card.ability.extra.retriggers) }
     end
   end,
 
