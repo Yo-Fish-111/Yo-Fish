@@ -144,10 +144,12 @@ return {
       j_mot_jinxJ = {
         name = "Jinx",
         text = {
-          "Gives {X:mult,C:white}X#1#{} Mult.",
-          "Increase by {X:mult,C:white}+#2#X{} at end of boss blind.",
-          "Then increase gain by 1 at end of boss blind.",
-          "{C:inactive}Art + Concept by jinxfucks{}",
+          "This Joker gains {X:mult,C:white}X#2#{} Mult",
+          "whenever a boss blind is defeated.",
+          "Mult gain increases by {X:mult,C:white}X1{} with each",
+          "boss blind defeated.",
+          "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)",
+          "{C:inactive}Art + Concept by @jinxfucks{}",
         },
       },
 
