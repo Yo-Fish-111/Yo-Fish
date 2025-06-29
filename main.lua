@@ -126,14 +126,14 @@ SMODS.Rarity {
   badge_colour = HEX('000000'),
 }
 
-( -- Jokers
-assert(SMODS.load_file("Items/Jokers/CommonJokers.lua"))(),
-assert(SMODS.load_file("Items/Jokers/UncommonJokers.lua"))(),
-assert(SMODS.load_file("Items/Jokers/RareJokers.lua"))(),
-assert(SMOS.load_file("Items/Jokers/SuperbJokers.lua"))(),
-assert(SMODS.load_file("Items/Jokers/LegendaryJokers.lua"))(),
-assert(SMODS.load_file("Items/Jokers/OmegaJokers.lua"))()
-)
+{ -- Jokers
+  assert(SMODS.load_file("Items/Jokers/CommonJokers.lua"))(),
+  assert(SMODS.load_file("Items/Jokers/UncommonJokers.lua"))(),
+  assert(SMODS.load_file("Items/Jokers/RareJokers.lua"))(),
+  assert(SMOS.load_file("Items/Jokers/SuperbJokers.lua"))(),
+  assert(SMODS.load_file("Items/Jokers/LegendaryJokers.lua"))(),
+  assert(SMODS.load_file("Items/Jokers/OmegaJokers.lua"))()
+}
 
 ---------------------
 -- Separation Line --
