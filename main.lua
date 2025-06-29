@@ -135,9 +135,9 @@ assert(SMODS.load_file("Items/Jokers/LegendaryJokers.lua"))()
 assert(SMODS.load_file("Items/Jokers/OmegaJokers.lua"))()
 
 -- Consumables
-assert(SMODS.load_file("Items/Consumable_Related/Consumables.lua"))()
-assert(SMODS.load_file("Items/Consumable_Related/Boosters.lua"))()
-assert(SMODS.load_file("Items/Consumable_Related/Enhancements.lua"))()
+assert(SMODS.load_file("Items/Consumable Related/Consumables.lua"))()
+assert(SMODS.load_file("Items/Consumable Related/Boosters.lua"))()
+assert(SMODS.load_file("Items/Consumable Related/Enhancements.lua"))()
 
 assert(SMODS.load_file("Items/Blinds.lua"))()
 assert(SMODS.load_file("contexts.lua"))()
