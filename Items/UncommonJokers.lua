@@ -65,3 +65,46 @@ SMODS.Joker {
   end
 
 }
+
+SMODS.Joker {
+  key = "officeJobJ",
+  pos = { x = 1, y = 0 },
+  rarity = 2,
+  atlas = "PLH",
+  config = { extra = { dollars = 5, poker_hand = "Straight" } },
+  cost = 6,
+  blueprint_compat = true,
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.extra.dollars } }
+  end,
+  calculate = function(self, card, context)
+    if context.before
+        and context.main_eval
+        and context.scoring_name == card.ability.extra.poker_hand
+        -- need to use the ModofTheseus version of get_highest for better typing
+        -- i think :3
+        and ModofTheseus.get_highest(context.scoring_hand):get_id() == 9
+        and ModofTheseus.get_lowest(context.scoring_hand):get_id() == 5
+    then
+      G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.dollars
+      -- print(ModofTheseus.get_highest(context.scoring_hand).base.id)
+      -- print(ModofTheseus.get_lowest(context.scoring_hand).base.id)
+      -- for _k, v in ipairs(context.scoring_hand) do
+      --   print(v.base.id)
+      -- end
+      return {
+        dollars = card.ability.extra.dollars,
+        func = function() -- This is for timing purposes, it runs after the dollar manipulation
+          G.E_MANAGER:add_event(Event({
+            func = function()
+              G.GAME.dollar_buffer = 0
+              return true
+            end
+          }))
+        end
+      }
+    end
+  end,
+
+  -- todo: add joker display compatibility @chore
+}

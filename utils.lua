@@ -42,6 +42,7 @@ function ModofTheseus.safe_get(t, ...)
   return current
 end
 
+-- neat utility made by the wonderful abigail. types by jinxfucks
 ---@param card table|Card
 ---@param source table|Card
 function ModofTheseus.debuffed(card, source)
@@ -52,4 +53,36 @@ function ModofTheseus.debuffed(card, source)
       card = source,
     }
   end
+end
+
+-- gets the lowest rank in provided hand
+---@param hand (Card[]|table[])
+function ModofTheseus.get_lowest(hand)
+  local temp_ID = 15
+  local lowest_card = nil
+
+  for _k, v in ipairs(hand) do
+    if temp_ID >= v:get_id() and not SMODS.has_no_rank(v) then
+      temp_ID = v:get_id()
+      lowest_card = v
+    end
+  end
+
+  return lowest_card
+end
+
+-- gets the highest rank in provided hand
+---@param hand (Card[]|table[])
+function ModofTheseus.get_highest(hand)
+  local temp_ID = 0
+  local highest_card = nil
+
+  for _k, v in ipairs(hand) do
+    if temp_ID <= v:get_id() and not SMODS.has_no_rank(v) then
+      temp_ID = v:get_id()
+      highest_card = v
+    end
+  end
+
+  return highest_card
 end
