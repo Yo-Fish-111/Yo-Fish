@@ -68,7 +68,7 @@ SMODS.Joker {
     local suit = (G.GAME.current_round.ancient_card or {}).suit or 'Spades'
     return {
       vars = {
-        math.min(card.ability.immutable.max_retriggers, card.ability.extra.retriggers),
+        math.min(card.ability.immutable.max_repetitions, card.ability.extra.repetitions),
         localize(suit, 'suits_singular'),
         colours = { G.C.SUITS[suit] },
       }
@@ -79,8 +79,8 @@ SMODS.Joker {
     if context.repetition and context.other_card:is_suit(G.GAME.current_round.ancient_card.suit) and context.cardarea == G.play then
       return {
         message = 'Again!',
-        repetitions = math.min(card.ability.immutable.max_retriggers,
-          card.ability.extra.retriggers)
+        repetitions = math.min(card.ability.immutable.max_repetitions,
+          card.ability.extra.repetitions)
       }
     end
   end,
@@ -102,8 +102,8 @@ SMODS.Joker {
       retrigger_function = function(playing_card, scoring_hand, held_in_hand, joker_card)
         if held_in_hand then return 0 end
         return playing_card:is_suit(G.GAME.current_round.ancient_card.suit) and
-            JokerDisplay.calculate_joker_triggers(joker_card) * math.min(joker_card.ability.immutable.max_retriggers,
-              joker_card.ability.extra.retriggers) or 0
+            JokerDisplay.calculate_joker_triggers(joker_card) * math.min(joker_card.ability.immutable.maxmax_repetitions,
+              joker_card.ability.extra.repetitions) or 0
       end
     }
   end
