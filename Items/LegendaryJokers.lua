@@ -66,7 +66,13 @@ SMODS.Joker {
   cost = 20,
   loc_vars = function(self, info_queue, card)
     local suit = (G.GAME.current_round.ancient_card or {}).suit or 'Spades'
-    return { vars = { localize(suit, 'suits_singular'), colours = { G.C.SUITS[suit] }, repetitions = 2 } }
+    return {
+      vars = {
+        card.ability.extra.repetitions,
+        localize(suit, 'suits_singular'),
+        colours = { G.C.SUITS[suit] },
+      }
+    }
   end,
 
   calculate = function(self, card, context)

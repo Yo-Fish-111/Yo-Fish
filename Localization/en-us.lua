@@ -156,8 +156,9 @@ return {
       j_mot_altxxJ = {
         name = "Alt X.X",
         text = {
-          "Retrigger all {V:1}#1#{} cards {C:attention}#3#{} times",
-          "{C:inactive}Suit changes at end of round{}"
+          "Retrigger all {V:1}#2#{} cards",
+          "{C:attention}#1#{} times",
+          "{C:inactive,s:0.8}suit changes at end of round",
         },
       },
 
