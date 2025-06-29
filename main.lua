@@ -138,7 +138,13 @@ assert(SMODS.load_file("Items/Jokers/OmegaJokers.lua"))()
 assert(SMODS.load_file("Items/Consumable Related/Consumables.lua"))()
 assert(SMODS.load_file("Items/Consumable Related/Boosters.lua"))()
 assert(SMODS.load_file("Items/Consumable Related/Enhancements.lua"))()
+assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/TarotCards.lua"))()
+assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/PlanetCards.lua"))()
+assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/SpectralCards.lua"))()
 
+-- Blind / Antes
 assert(SMODS.load_file("Items/Blinds.lua"))()
+
+-- Mod Utilities
 assert(SMODS.load_file("contexts.lua"))()
 assert(SMODS.load_file("utils.lua"))() -- not technically used yet, but don't remove it. *cough cough* seph *cough cough* /lh
