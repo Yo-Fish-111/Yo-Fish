@@ -108,3 +108,74 @@ SMODS.Joker {
 
   -- todo: add joker display compatibility @chore
 }
+
+SMODS.Joker {
+  key = "bucketOfChickenJ",
+  pos = { x = 1, y = 0 },
+  rarity = 2,
+  atlas = "PLH",
+  config = { extra = { x_chips = 4, x_chips_loss = 1 } },
+  cost = 8,
+  pools = {
+    ["Food"] = true
+  },
+  blueprint_compat = true,
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.extra.x_chips, card.ability.extra.x_chips_loss } }
+  end,
+  calculate = function(self, card, context)
+    if context.joker_main then
+      return { x_chips = card.ability.extra.x_chips }
+    end
+
+    if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+      card.ability.extra.x_chips = card.ability.extra.x_chips - card.ability.extra.x_chips_loss
+
+      if card.ability.extra.x_chips <= 0 then
+        G.E_MANAGER:add_event(Event({
+          func = function()
+            -- This replicates the food destruction effect
+            -- If you want a simpler way to destroy Jokers, you can do card:start_dissolve() for a dissolving animation
+            -- or just card:remove() for no animation
+            play_sound('tarot1')
+            card.T.r = -0.2
+            card:juice_up(0.3, 0.4)
+            card.states.drag.is = true
+            card.children.center.pinch.x = true
+            G.E_MANAGER:add_event(Event({
+              trigger = 'after',
+              delay = 0.3,
+              blockable = false,
+              func = function()
+                card:remove()
+                return true
+              end
+            }))
+            return true
+          end
+        }))
+        return {
+          message = localize('k_eaten_ex'),
+          colour = G.C.RED
+        }
+      else
+        return {
+          message = localize({ type = 'variable', key = 'a_x_chips_minus', vars = { card.ability.extra.x_chips_loss } }),
+          colour = G.C.CHIPS
+        }
+      end
+    end
+  end,
+
+  -- todo: add joker display compatibility @chore
+  joker_display_def = function(JokerDisplay)
+    ---@type JDJokerDefinition
+    return {
+      text = {
+        { text = "+" },
+        { ref_table = "card.ability.extra", ref_value = "x_chips", retrigger_type = "mult" },
+      },
+      text_config = { colour = G.C.CHIPS }
+    }
+  end
+}

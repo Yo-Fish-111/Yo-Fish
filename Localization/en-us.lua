@@ -93,6 +93,15 @@ return {
         },
       },
 
+      j_mot_bucketOfChickenJ = {
+        name = "Bucket of Chicken",
+        text = {
+          "{C:chips}X#1#{} Chips",
+          "{C:chips}-#2#X{} Chips per",
+          "round played",
+        },
+      },
+
       ---------------------------
       ------- RARE JOKERS -------
       ---------------------------
@@ -221,6 +230,7 @@ return {
       mot_stone_singular = { "+#1# Stone" },
       mot_stone_plural = { "+#1# Stones" },
       mot_glass_saved = { "Saved!" },
+      a_x_chips_minus = "-#1#X",
     }
   },
 
