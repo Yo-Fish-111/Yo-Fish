@@ -39,7 +39,7 @@ SMODS.Consumable {
     end
 }
 
-SMODS.ConsumableType({
+SMODS.ConsumableType {
     object_type = "ConsumableType",
     key = "Theseus",
 	primary_colour = HEX("dbc6a0"),
@@ -53,52 +53,9 @@ SMODS.ConsumableType({
     default = "c_mot_ancient_oars",
     can_stack = true,
     can_divide = true,
-})
-SMODS.ConsumableType {
-key = 'maintenance',
-collection_rows = {7, 7, 7},
-primary_colour = G.C.CHIPS,
-secondary_colour = HEX('76a7a4'),
-loc_txt = {
-  collection = 'Maintenance Cards',
-  name = 'Maintenance'
-},
-shop_rate = 0.4
-}
-SMODS.ConsumableType {
-key = 'dettarot',
-collection_rows = {7, 7, 7},
-primary_colour = G.C.CHIPS,
-secondary_colour = HEX('a3589d'),
-loc_txt = {
-  collection = 'Deteriorated Tarots',
-  name = 'Det. Tarot'
-},
-shop_rate = 0.4
-}
-SMODS.ConsumableType {
-key = 'detplanet',
-collection_rows = {7, 7, 7},
-primary_colour = G.C.CHIPS,
-secondary_colour = HEX('0067c6'),
-loc_txt = {
-  collection = 'Deteriorated Planets',
-  name = 'Det. Planet'
-},
-shop_rate = 0.4
-}
-SMODS.ConsumableType {
-key = 'detspectral',
-collection_rows = {7, 7, 7},
-primary_colour = G.C.CHIPS,
-secondary_colour = HEX('0000ff'),
-loc_txt = {
-  collection = 'Deteriorated Spectrals',
-  name = 'Det. Spectral'
-},
 }
 
-SMODS.Consumable({
+SMODS.Consumable {
     key = "mot_ancient_oars",
     set = "Theseus",
     atlas = "PLH",
@@ -107,4 +64,51 @@ SMODS.Consumable({
         name = "Ancient Oars",
         text = { "Something something" },
     }
-})
+}
+
+SMODS.ConsumableType {
+    key = 'maintenance',
+    collection_rows = {7, 7, 7},
+    primary_colour = G.C.CHIPS,
+    secondary_colour = HEX('76a7a4'),
+    loc_txt = {
+        collection = 'Maintenance Cards',
+        name = 'Maintenance'
+    },
+    shop_rate = 0.4
+}
+
+SMODS.ConsumableType {
+    key = 'det_tarot',
+    collection_rows = {7, 7, 7},
+    primary_colour = G.C.CHIPS,
+    secondary_colour = HEX('a3589d'),
+    loc_txt = {
+        collection = 'Deteriorated Tarots',
+        name = 'Det. Tarot'
+    },
+    shop_rate = 0.4
+}
+
+SMODS.ConsumableType {
+    key = 'det_planet',
+    collection_rows = {7, 7, 7},
+    primary_colour = G.C.CHIPS,
+    secondary_colour = HEX('0067c6'),
+    loc_txt = {
+        collection = 'Deteriorated Planets',
+        name = 'Det. Planet'
+    },
+    shop_rate = 0.4
+}
+
+SMODS.ConsumableType {
+    key = 'det_spectral',
+    collection_rows = {7, 7, 7},
+    primary_colour = G.C.CHIPS,
+    secondary_colour = HEX('0000ff'),
+    loc_txt = {
+        collection = 'Deteriorated Spectrals',
+        name = 'Det. Spectral'
+    },
+}
