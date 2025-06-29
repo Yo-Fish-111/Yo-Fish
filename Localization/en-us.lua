@@ -61,6 +61,16 @@ return {
         },
       },
 
+      j_mot_hashtagQookingJ = {
+        name = "#1#Qooking",
+        text = {
+          "{C:chips}+#2#{} Chips for",
+          "each {C:attention}Food Joker{} card",
+          "{C:inactive}(Currently {C:blue}+#3#{C:inactive} Chips)",
+        },
+
+      },
+
       ---------------------------
       ----- UNCOMMON JOKERS -----
       ---------------------------
@@ -107,6 +117,14 @@ return {
         }
       },
 
+      j_mot_hashtagQueenJ = {
+        name = "#1#Queen",
+        text = {
+          "Played {C:attention}Queens{} each give",
+          "{X:mult,C:white} X#2# {} Mult when scored",
+        },
+      },
+
       ---------------------------
       ------ SUPERB JOKERS ------
       ---------------------------
@@ -136,7 +154,7 @@ return {
       j_mot_altxxJ = {
         name = "Alt X.X",
         text = {
-          "Retrigger all {V:1}#1#{} cards {C:attention}#2#{} times",
+          "Retrigger all {V:1}#1#{} cards {C:attention}#3#{} times",
           "{C:inactive}Suit changes at end of round{}"
         },
       },

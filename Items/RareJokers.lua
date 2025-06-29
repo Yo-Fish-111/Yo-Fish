@@ -19,26 +19,26 @@
 ]]
 
 SMODS.Joker {
-    key = "winningbigJ",
-    atlas = "RareJ",
-    rarity = 3,
-    pos = {x = 0, y = 0},
-    config = {extra = {dollars = 1, money_mod = 1}},
-    cost = 10,
-    blueprint_compat = false,
-    loc_vars = function(self, info_queue, card)
-        return {vars = {card.ability.extra.dollars, card.ability.extra.money_mod}}
-    end,
-    
-    calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and context.other_card.lucky_trigger and not context.blueprint then
-            card.ability.extra.dollars = card.ability.extra.dollars + card.ability.extra.money_mod
-            return {
-                messsage = localize('k_upgrade_ex'),
-                colour = G.C.MONEY
-            }
-        end
-    end,
+  key = "winningbigJ",
+  atlas = "RareJ",
+  rarity = 3,
+  pos = { x = 0, y = 0 },
+  config = { extra = { dollars = 1, money_mod = 1 } },
+  cost = 10,
+  blueprint_compat = false,
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.extra.dollars, card.ability.extra.money_mod } }
+  end,
+
+  calculate = function(self, card, context)
+    if context.individual and context.cardarea == G.play and context.other_card.lucky_trigger and not context.blueprint then
+      card.ability.extra.dollars = card.ability.extra.dollars + card.ability.extra.money_mod
+      return {
+        messsage = localize('k_upgrade_ex'),
+        colour = G.C.MONEY
+      }
+    end
+  end,
 
   calc_dollar_bonus = function(self, card)
     return card.ability.extra.dollars
@@ -138,12 +138,12 @@ SMODS.Joker({
 
 
 
-  
+
   joker_display_def = function(JokerDisplay)
     ---@type JDJokerDefinition
     return {
       text = {
-        { text = "+", colour = G.C.MULT },
+        { text = "+",                              colour = G.C.MULT },
         { ref_table = "card.joker_display_values", ref_value = "mult", colour = G.C.MULT, retrigger_type = "mult" },
         {
           border_nodes = {
@@ -172,3 +172,28 @@ SMODS.Joker({
     }
   end
 })
+
+
+SMODS.Joker {
+  key = "hashtagQueenJ",
+  atlas = "PLH",
+  rarity = 3,
+  pos = { x = 2, y = 0 },
+  config = { extra = { x_mult = 1.5, dumb_fucking_workaround = "#" } },
+  cost = 10,
+  pools = { ["Q"] = true },
+  blueprint_compat = true,
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.extra.dumb_fucking_workaround, card.ability.extra.x_mult } }
+  end,
+
+  calculate = function(self, card, context)
+    if context.individual and context.cardarea == G.play and context.other_card:get_id() == 12 then
+      return {
+        x_mult = card.ability.extra.x_mult
+      }
+    end
+  end,
+
+  -- todo: add joker display compatibility @chore
+}

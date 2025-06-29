@@ -18,9 +18,12 @@ function Card:is_food()
   end
 end
 
-function Card:is_bathroom()
-  if ModofTheseus.safe_get(self.config.center, "pools", "Bathroom")
-  -- or (Cryptid and Cryptid.safe_get(self.config.center, "pools", "Bathroom")) -- if cryptid for some reason adds bathroom jokers lmao
+-- checks if the card is in a pool with the given key
+-- for checking if it's a food joker use is_food instead
+---@param pool_key string
+function Card:is_in_pool(pool_key)
+  if ModofTheseus.safe_get(self.config.center, "pools", pool_key)
+      or (Cryptid and Cryptid.safe_get(self.config.center, "pools", pool_key))
   then
     return true
   end
