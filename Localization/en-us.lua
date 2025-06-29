@@ -225,7 +225,7 @@ return {
       k_mot_superb = { "Superb" },
       k_mot_omega = { "Omega" },
     },
-
+    
     v_dictionary = {
       mot_stone_singular = { "+#1# Stone" },
       mot_stone_plural = { "+#1# Stones" },
@@ -233,5 +233,4 @@ return {
       a_x_chips_minus = "-#1#X",
     }
   },
-
 }
