@@ -134,6 +134,10 @@ assert(SMOS.load_file("Items/Jokers/SuperbJokers.lua"))()
 assert(SMODS.load_file("Items/Jokers/LegendaryJokers.lua"))()
 assert(SMODS.load_file("Items/Jokers/OmegaJokers.lua"))()
 
+---------------------
+-- Separation Line --
+---------------------
+
 assert(SMODS.load_file("Items/Blinds.lua"))()
 assert(SMODS.load_file("Items/Consumables.lua"))()
 assert(SMODS.load_file("Items/Boosters.lua"))()
