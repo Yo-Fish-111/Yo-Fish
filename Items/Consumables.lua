@@ -54,6 +54,49 @@ SMODS.ConsumableType({
     can_stack = true,
     can_divide = true,
 })
+SMODS.ConsumableType {
+key = 'maintenance',
+collection_rows = {7, 7, 7},
+primary_colour = G.C.CHIPS,
+secondary_colour = HEX('76a7a4'),
+loc_txt = {
+  collection = 'Maintenance Cards',
+  name = 'Maintenance'
+},
+shop_rate = 0.4
+}
+SMODS.ConsumableType {
+key = 'dettarot',
+collection_rows = {7, 7, 7},
+primary_colour = G.C.CHIPS,
+secondary_colour = HEX('a3589d'),
+loc_txt = {
+  collection = 'Deteriorated Tarots',
+  name = 'Det. Tarot'
+},
+shop_rate = 0.4
+}
+SMODS.ConsumableType {
+key = 'detplanet',
+collection_rows = {7, 7, 7},
+primary_colour = G.C.CHIPS,
+secondary_colour = HEX('0067c6'),
+loc_txt = {
+  collection = 'Deteriorated Planets',
+  name = 'Det. Planet'
+},
+shop_rate = 0.4
+}
+SMODS.ConsumableType {
+key = 'detspectral',
+collection_rows = {7, 7, 7},
+primary_colour = G.C.CHIPS,
+secondary_colour = HEX('0000ff'),
+loc_txt = {
+  collection = 'Deteriorated Spectrals',
+  name = 'Det. Spectral'
+},
+}
 
 SMODS.Consumable({
     key = "mot_ancient_oars",
