@@ -1,10 +1,10 @@
 {
-  "workspace.library": [
-    "../smods",
-    "../Steamodded",
-    "../lovely",
-    "../JokerDisplay"
-  ],
+    "workspace.library": [
+        "../smods",
+        "../Steamodded",
+        "../lovely",
+        "../JokerDisplay"
+    ],
     "diagnostics.globals": [
         "create_dynatext_badge",
         "titlecase"

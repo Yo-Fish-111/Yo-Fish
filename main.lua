@@ -126,15 +126,26 @@ SMODS.Rarity {
   badge_colour = HEX('000000'),
 }
 
-assert(SMODS.load_file("overrides.lua"))()
+-- Jokers
+assert(SMODS.load_file("Items/Jokers/CommonJokers.lua"))()
+assert(SMODS.load_file("Items/Jokers/UncommonJokers.lua"))()
+assert(SMODS.load_file("Items/Jokers/RareJokers.lua"))()
+assert(SMODS.load_file("Items/Jokers/SuperbJokers.lua"))()
+assert(SMODS.load_file("Items/Jokers/LegendaryJokers.lua"))()
+assert(SMODS.load_file("Items/Jokers/OmegaJokers.lua"))()
+
+-- Consumables
+assert(SMODS.load_file("Items/Consumable Related/Consumables.lua"))()
+assert(SMODS.load_file("Items/Consumable Related/Boosters.lua"))()
+assert(SMODS.load_file("Items/Consumable Related/Enhancements.lua"))()
+assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/TarotCards.lua"))()
+assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/PlanetCards.lua"))()
+assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/SpectralCards.lua"))()
+
+-- Blind / Antes
 assert(SMODS.load_file("Items/Blinds.lua"))()
-assert(SMODS.load_file("Items/CommonJokers.lua"))()
-assert(SMODS.load_file("Items/Consumables.lua"))()
-assert(SMODS.load_file("Items/LegendaryJokers.lua"))()
-assert(SMODS.load_file("Items/OmegaJokers.lua"))()
-assert(SMODS.load_file("Items/RareJokers.lua"))()
-assert(SMODS.load_file("Items/UncommonJokers.lua"))()
-assert(SMODS.load_file("Items/Boosters.lua"))()
-assert(SMODS.load_file("Items/Enhancements.lua"))()
+
+-- Mod Utilities
+assert(SMODS.load_file("overrides.lua"))()
 assert(SMODS.load_file("contexts.lua"))()
 assert(SMODS.load_file("utils.lua"))() -- not technically used yet, but don't remove it. *cough cough* seph *cough cough* /lh

@@ -11,16 +11,19 @@ function Card:is_food()
     j_diet_cola = true,
     j_popcorn = true,
     j_ramen = true,
-    j_selzer = true,
+    j_seltzer = true,
   }
   if food[self.config.center.key] or (Cryptid and Cryptid.safe_get(self.config.center, "pools", "Food")) or ModofTheseus.safe_get(self.config.center, "pools", "Food") then
     return true
   end
 end
 
-function Card:is_bathroom()
-  if ModofTheseus.safe_get(self.config.center, "pools", "Bathroom")
-  -- or (Cryptid and Cryptid.safe_get(self.config.center, "pools", "Bathroom")) -- if cryptid for some reason adds bathroom jokers lmao
+-- checks if the card is in a pool with the given key
+-- for checking if it's a food joker use is_food instead
+---@param pool_key string
+function Card:is_in_pool(pool_key)
+  if ModofTheseus.safe_get(self.config.center, "pools", pool_key)
+      or (Cryptid and Cryptid.safe_get(self.config.center, "pools", pool_key))
   then
     return true
   end
@@ -42,6 +45,7 @@ function ModofTheseus.safe_get(t, ...)
   return current
 end
 
+-- neat utility made by the wonderful abigail. types by jinxfucks
 ---@param card table|Card
 ---@param source table|Card
 function ModofTheseus.debuffed(card, source)
@@ -52,6 +56,38 @@ function ModofTheseus.debuffed(card, source)
       card = source,
     }
   end
+end
+
+-- gets the lowest rank in provided hand
+---@param hand (Card[]|table[])
+function ModofTheseus.get_lowest(hand)
+  local temp_ID = 15
+  local lowest_card = nil
+
+  for _k, v in ipairs(hand) do
+    if temp_ID >= v:get_id() and not SMODS.has_no_rank(v) then
+      temp_ID = v:get_id()
+      lowest_card = v
+    end
+  end
+
+  return lowest_card
+end
+
+-- gets the highest rank in provided hand
+---@param hand (Card[]|table[])
+function ModofTheseus.get_highest(hand)
+  local temp_ID = 0
+  local highest_card = nil
+
+  for _k, v in ipairs(hand) do
+    if temp_ID <= v:get_id() and not SMODS.has_no_rank(v) then
+      temp_ID = v:get_id()
+      highest_card = v
+    end
+  end
+
+  return highest_card
 end
 
 
