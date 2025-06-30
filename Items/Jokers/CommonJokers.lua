@@ -48,6 +48,36 @@ SMODS.Joker {
 
 }
 
+
+SMODS.Joker {
+  key = "saladNumberJ",
+  pos = { x = 0, y = 0 },
+  rarity = 1,
+  atlas = "PLH",
+  config = { extra = { chips = 1 } },
+  cost = 1,
+  blueprint_compat = true,
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.extra.chips } }
+  end,
+  calculate = function(self, card, context)
+    if context.joker_main then
+      return { chips = card.ability.extra.chips }
+    end
+  end,
+
+  joker_display_def = function(JokerDisplay)
+    ---@type JDJokerDefinition
+    return {
+      text = {
+        { text = "+" },
+        { ref_table = "card.ability.extra", ref_value = "chips", retrigger_type = "mult" },
+      },
+      text_config = { colour = G.C.CHIPS }
+    }
+  end
+
+
 SMODS.Joker {
   key = "hashtagQookingJ",
   atlas = "PLH",
