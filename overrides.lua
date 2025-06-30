@@ -1,6 +1,7 @@
 
 -- Modify to display badges for credits and some gameset badges
 local SMODS_create_mod_badges = SMODS.create_mod_badges
+---@diagnostic disable-next-line: duplicate-set-field
 function SMODS.create_mod_badges(card, badges)
 	SMODS_create_mod_badges(card, badges)
 
