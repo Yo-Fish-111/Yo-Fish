@@ -25,5 +25,18 @@ SMODS.Joker({
   atlas = "PLH",
   cost = 4,
   blueprint_compat = false,
-  unlocked = true
+  unlocked = true,
+  mot_credits = {
+    idea = {
+      "Jinx",
+    },
+    art = {
+      "Jinx",
+      "Abducted",
+    },
+    code = {
+      "Jinx",
+      "Mothball",
+    },
+  },
 })

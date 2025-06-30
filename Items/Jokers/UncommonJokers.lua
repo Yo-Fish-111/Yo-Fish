@@ -25,6 +25,20 @@ SMODS.Joker {
   config = { extra = { X_mult = 1, mult_modSell = .01, mult_modRoll = .05 } },
   cost = 8,
   blueprint_compat = true,
+  mot_credits = {
+    idea = {
+      "Goldog",
+    },
+    art = {
+      -- They kinda just did the same thing at the same time so it'd be hard to justify crediting one over the other regardless of which one made it in
+      "Goldog",
+      "Abudcted"
+    },
+    code = {
+      "Mothball",
+      "Hoarfrost Trickle",
+    },
+  },
   loc_vars = function(self, info_queue, card)
     return { vars = { card.ability.extra.X_mult, card.ability.extra.mult_modSell, card.ability.extra.mult_modRoll } }
   end,
@@ -71,6 +85,17 @@ SMODS.Joker {
   pos = { x = 1, y = 0 },
   rarity = 2,
   atlas = "PLH",
+  mot_credits = {
+    idea = {
+      "Fish",
+    },
+    art = {
+      "Fish",
+    },
+    code = {
+      "Jinx",
+    },
+  },
   config = { extra = { dollars = 5, poker_hand = "Straight" } },
   cost = 6,
   blueprint_compat = true,
@@ -120,6 +145,17 @@ SMODS.Joker {
     ["Food"] = true
   },
   blueprint_compat = true,
+  mot_credits = {
+    idea = {
+      "Fish",
+    },
+    art = {
+      "Fish",
+    },
+    code = {
+      "Jinx",
+    },
+  },
   loc_vars = function(self, info_queue, card)
     return { vars = { card.ability.extra.x_chips, card.ability.extra.x_chips_loss } }
   end,

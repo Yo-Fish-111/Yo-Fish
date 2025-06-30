@@ -5,55 +5,43 @@ local SMODS_create_mod_badges = SMODS.create_mod_badges
 function SMODS.create_mod_badges(card, badges)
 	SMODS_create_mod_badges(card, badges)
 
-    -- Cryptid.safe_get(G, "ACTIVE_MOD_UI", "id") == id
     local id = card and card.mod and card.mod.id
-    -- if G and G.ACTIVE_MOD_UI and G.ACTIVE_MOD_UI.id == id then
     if not id == "Mod_of_Theseus" then return end
-	if not card.mot_credits then return end
+	if not card or not card.mot_credits then return end
 
 
 	local dynatext = nil
 
 	if type(card.mot_credits) == "table" then
+		-- Alphabetical order
+		local categories = {}
+		for category, _ in pairs(card.mot_credits) do
+			table.insert(categories, category)
+		end
+		table.sort(categories)
 		local credits = {}
-		for category, credit_table in pairs(card.mot_credits) do
+		for _, category in ipairs(categories) do
+			local credit_table = card.mot_credits[category]
+			table.sort(credit_table)
 			for _, name in ipairs(credit_table) do
 				table.insert(credits, titlecase(category) .. ": " .. name)
 			end
 		end
-		-- shuffle credits
-		-- table.shuffle(credits)
 
-		-- shuffle credits so the same name doesn't always get the spotlight before any other
-		for i = #credits, 2, -1 do
-			local j = math.random(i) -- doesn't need to be affected by the seed so we use the built-in random function
-			credits[i], credits[j] = credits[j], credits[i]
-		end
+
 		table.insert(credits, 1, "Theseus")
-
 		dynatext = DynaText({
-			-- string = {"dynatext", "second text"},
 			string = credits,
-			-- colours = {G.C.RED, G.C.GREEN, G.C.BLUE},
 			colours = {HEX("97572b")},
-			-- colours = {HEX("97572b"), HEX("c57138")},
 			silent = true,
-			-- colours = {G.C.WHITE},
-			-- shadow = true,
-			-- rotate = true,
-			-- bump = true,
-			-- spacing =1,
-			-- scale = 0.7,
 			scale = 0.33 * 0.9,
 			float = true,
 			shadow = true,
 			offset_y = -0.05,
-			-- maxw = 4,
-			-- pop_in = 0.5
 		})
 
-		
 	elseif type(card.mot_credits) == "function" then
+		-- Allow using a function to allow for non-standard credits if needed
 		dynatext = card.mot_credits()
 	end
 

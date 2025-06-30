@@ -26,6 +26,18 @@ SMODS.Joker {
   config = { extra = { dollars = 1, money_mod = 1 } },
   cost = 10,
   blueprint_compat = false,
+  mot_credits = {
+    idea = {
+      "Fish",
+    },
+    art = {
+      "Abducted",
+    },
+    code = {
+      "Mothball",
+      "Hoarfrost Trickle",
+    },
+  },
   loc_vars = function(self, info_queue, card)
     return { vars = { card.ability.extra.dollars, card.ability.extra.money_mod } }
   end,
@@ -71,6 +83,18 @@ SMODS.Joker({
   pos = { x = 0, y = 0 },
   rarity = 3,
   cost = 8,
+  mot_credits = {
+    idea = {
+      "Goldog", -- Pluey
+    },
+    art = {
+      "Goldog", -- Pluey
+    },
+    code = {
+      "Jinx",
+      "Hoarfrost Trickle",
+    },
+  },
   config = {
     extra = {
       mult = 100, x_mult = 2,
@@ -143,7 +167,7 @@ SMODS.Joker({
     ---@type JDJokerDefinition
     return {
       text = {
-        { text = "+",                              colour = G.C.MULT },
+        { text = "+", colour = G.C.MULT },
         { ref_table = "card.joker_display_values", ref_value = "mult", colour = G.C.MULT, retrigger_type = "mult" },
         {
           border_nodes = {
@@ -183,6 +207,17 @@ SMODS.Joker {
   cost = 10,
   pools = { ["Q"] = true },
   blueprint_compat = true,
+  mot_credits = {
+    idea = {
+      "Jinx",
+    },
+    art = {
+      -- "bologna",
+    },
+    code = {
+      "Jinx",
+    },
+  },
   loc_vars = function(self, info_queue, card)
     return { vars = { card.ability.extra.dumb_fucking_workaround, card.ability.extra.x_mult } }
   end,

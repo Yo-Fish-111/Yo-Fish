@@ -26,6 +26,18 @@ SMODS.Joker {
   config = { extra = { chips = 4 } },
   cost = 1,
   blueprint_compat = true,
+  mot_credits = {
+    idea = {
+      "Alt X.X",
+    },
+    art = {
+      "Alt X.X",
+    },
+    code = {
+      "Mothball",
+      "Hoarfrost Trickle",
+    },
+  },
   loc_vars = function(self, info_queue, card)
     return { vars = { card.ability.extra.chips } }
   end,
@@ -60,6 +72,17 @@ SMODS.Joker {
     ["Food"] = true
   },
   blueprint_compat = true,
+  mot_credits = {
+    idea = {
+      "Jinx",
+    },
+    art = {
+      -- "Jinx",
+    },
+    code = {
+      "Jinx",
+    },
+  },
   loc_vars = function(self, info_queue, card)
     local food_jokers = 0
 
