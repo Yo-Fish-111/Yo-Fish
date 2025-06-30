@@ -60,6 +60,14 @@ return {
           '{C:inactive}"Oh no, it\'s Jimbo\'s evil cousin, Obmij!{}'
         },
       },
+      
+      j_mot_saladNumberJ = {
+        name = "Salad Number",
+        text = {
+          "{C:chips}+#1#{} chips",
+          '{C:inactive}"Its bigger... technically{}'
+        },
+      },
 
       j_mot_hashtagQookingJ = {
         name = "#1#Qooking",
