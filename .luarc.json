@@ -4,5 +4,9 @@
     "../Steamodded",
     "../lovely",
     "../JokerDisplay"
-  ]
+  ],
+    "diagnostics.globals": [
+        "create_dynatext_badge",
+        "titlecase"
+    ]
 }

@@ -64,6 +64,18 @@ SMODS.Joker {
   blueprint_compat = true,
   config = { extra = { repetitions = 2 } },
   cost = 20,
+  mot_credits = {
+    idea = {
+      "Alt X.X",
+    },
+    art = {
+      "Alt X.X",
+    },
+    code = {
+      "Mothball",
+      "Hoarfrost Trickle",
+    },
+  },
   loc_vars = function(self, info_queue, card)
     local suit = (G.GAME.current_round.ancient_card or {}).suit or 'Spades'
     return { vars = { localize(suit, 'suits_singular'), colours = { G.C.SUITS[suit] }, repetitions = 2 } }

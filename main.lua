@@ -126,6 +126,7 @@ SMODS.Rarity {
   badge_colour = HEX('000000'),
 }
 
+assert(SMODS.load_file("overrides.lua"))()
 assert(SMODS.load_file("Items/Blinds.lua"))()
 assert(SMODS.load_file("Items/CommonJokers.lua"))()
 assert(SMODS.load_file("Items/Consumables.lua"))()
