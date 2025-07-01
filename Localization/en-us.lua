@@ -134,6 +134,15 @@ return {
         },
       },
 
+      j_mot_daveJ = {
+        name = "Dave",
+        text = {
+          "When sold, {C:green}#1# in #2# chance{}",
+          "to {C:attention}double money{},",
+          "set money to {C:money}$0{} otherwise"
+        },
+      },
+
       j_mot_cultContractJ = {
         name = "Cult Contract",
         text = {

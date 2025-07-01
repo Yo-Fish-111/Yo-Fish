@@ -239,3 +239,36 @@ SMODS.Joker {
 
   -- todo: add joker display compatibility @chore
 }
+
+SMODS.Joker {
+  key = "daveJ",
+  pos = { x = 2, y = 0 },
+  rarity = 3,
+  atlas = "PLH",
+  config = { extra = { odds = 2 } },
+  cost = 9,
+  blueprint_compat = false,
+  loc_vars = function(self, info_queue, card)
+    return { vars = { (G.GAME and G.GAME.probabilities.normal or 1), card.ability.extra.odds } }
+  end,
+  --either this or i hook another function
+  add_to_deck = function (self, card, from_debuff)
+    card.ability.extra_value = (-card.sell_cost)
+    card:set_cost()
+  end,
+  calculate = function(self, card, context)
+    if context.selling_self then
+      if pseudorandom('dave') < G.GAME.probabilities.normal / card.ability.extra.odds then
+        return { 
+          dollars = to_number(to_big(G.GAME.dollars))
+        }
+      else
+        return { 
+          dollars = to_number(to_big(-G.GAME.dollars))
+        }
+      end
+    end
+  end
+
+  -- todo: add joker display compatibility @chore
+}
