@@ -30,6 +30,10 @@ ModofTheseus = SMODS.current_mod
 ModofTheseus_config = ModofTheseus.config
 ModofTheseus.enabled = copy_table(ModofTheseus_config)
 
+SMODS.ObjectType {
+  key = "sinfulPool"
+}
+
 SMODS.Atlas {
   object_type = "Atlas",
   key = "PLH",
@@ -149,3 +153,4 @@ assert(SMODS.load_file("Items/Blinds.lua"))()
 assert(SMODS.load_file("overrides.lua"))()
 assert(SMODS.load_file("contexts.lua"))()
 assert(SMODS.load_file("utils.lua"))() -- not technically used yet, but don't remove it. *cough cough* seph *cough cough* /lh
+assert(SMODS.load_file("Items/Jokers/OwnershipClaiming.lua"))()
