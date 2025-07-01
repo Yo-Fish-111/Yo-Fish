@@ -27,6 +27,17 @@ SMODS.Joker {
     config = {},
     cost = 50,
     blueprint_compat = true,
+    mot_credits = {
+        idea = {
+            "Willow",
+        },
+        art = {
+            "Willow",
+        },
+        code = {
+            "Mothball",
+        },
+    },
     loc_vars = function (self, info_queue, card)
         return {vars = {}}
     end,
