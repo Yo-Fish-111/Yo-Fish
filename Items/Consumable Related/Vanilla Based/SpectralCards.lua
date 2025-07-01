@@ -30,7 +30,7 @@ SMODS.Consumable {
 
     use = function(self, card, area, copier)
         SMODS.add_card{
-            set = "SinJ"
+            set = "sinfulPool"
         }
     end
 }

@@ -30,6 +30,10 @@ ModofTheseus = SMODS.current_mod
 ModofTheseus_config = ModofTheseus.config
 ModofTheseus.enabled = copy_table(ModofTheseus_config)
 
+SMODS.ObjectType {
+  key = "sinfulPool"
+}
+
 SMODS.Atlas {
   object_type = "Atlas",
   key = "PLH",
