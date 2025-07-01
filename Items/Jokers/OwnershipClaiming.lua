@@ -4,19 +4,19 @@ SMODS.Joker:take_ownership("gluttenous_joker", {
     }},
 true)
 
-SMODS.Joker:take_owner("lusty_joker", {
+SMODS.Joker:take_ownership("lusty_joker", {
     poolss = {
         ["SinJ"] = true
     }},
 true)
 
-SMODS.Joker:take_owner("wrathful_joker", {
+SMODS.Joker:take_ownership("wrathful_joker", {
     poolss = {
         ["SinJ"] = true
     }},
 true)
 
-SMODS.Joker:take_owner("greedy_joker", {
+SMODS.Joker:take_ownership("greedy_joker", {
     poolss = {
         ["SinJ"] = true
     }},
