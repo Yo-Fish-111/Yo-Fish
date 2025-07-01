@@ -88,7 +88,7 @@ SMODS.Joker {
       text_config = { colour = G.C.CHIPS }
     }
   end
-
+}
 
 SMODS.Joker {
   key = "hashtagQookingJ",

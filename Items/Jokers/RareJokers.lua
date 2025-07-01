@@ -282,7 +282,7 @@ SMODS.Joker {
   atlas = "PLH",
   config = { extra = { odds = 2 } },
   cost = 9,
-  blueprint_compat = false,
+  blueprint_compat = true, -- Made consistent with other effects
   loc_vars = function(self, info_queue, card)
     return { vars = { (G.GAME and G.GAME.probabilities.normal or 1), card.ability.extra.odds } }
   end,
@@ -304,6 +304,4 @@ SMODS.Joker {
       end
     end
   end
-
-  -- todo: add joker display compatibility @chore
 }
