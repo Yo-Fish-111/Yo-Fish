@@ -20,7 +20,7 @@ SMODS.Consumable {
 }
 
 SMODS.Consumable {
-    key = "mot_sinful",
+    key = "sinful",
     set = "Spectral",
     atlas = "PLH",
     pos = {x = 2, y = 2} ,
