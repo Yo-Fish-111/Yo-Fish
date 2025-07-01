@@ -134,6 +134,15 @@ return {
         },
       },
 
+      j_mot_cultContractJ = {
+        name = "Cult Contract",
+        text = {
+          "Retrigger all scored {V:1}#2#{} cards",
+          "{C:attention} #1# {} additional times",
+          "All non-{V:1}#2#{} cards are debuffed"
+        },
+      },
+
       ---------------------------
       ------ SUPERB JOKERS ------
       ---------------------------
@@ -225,7 +234,7 @@ return {
       k_mot_superb = { "Superb" },
       k_mot_omega = { "Omega" },
     },
-    
+
     v_dictionary = {
       mot_stone_singular = { "+#1# Stone" },
       mot_stone_plural = { "+#1# Stones" },
