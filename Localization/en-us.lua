@@ -219,6 +219,15 @@ return {
         },
       },
 
+      j_mot_gachaJ = {
+        name = "Gacha Joker",
+        text = {
+          "Rolls a random joker every end of shop for {X:money,C:white}$#1#{}",
+          "Every {C:green}#6#{} rolls, increases how many rolls you get by {C:green}1{}",
+          "{C:inactive} #4#/#3# pity for legendary+",
+        },
+      },
+
     },
 
     Spectral = {
@@ -242,6 +251,9 @@ return {
     dictionary = {
       k_mot_superb = { "Superb" },
       k_mot_omega = { "Omega" },
+      k_not_enough_money = "Not enough money!",
+      k_rolled = "Rolled",
+      k_mot_gacha = "Gacha Roll!",
     },
 
     v_dictionary = {
