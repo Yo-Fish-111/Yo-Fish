@@ -91,3 +91,4 @@ SMODS.ConsumableType {
         name = 'Det. Spectral'
     },
 }
+
