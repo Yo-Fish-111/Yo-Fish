@@ -96,7 +96,7 @@ SMODS.Joker {
       "Jinx",
     },
   },
-  config = { extra = { dollars = 5, poker_hand = "Straight" } },
+  config = { extra = { dollars = 7.25, poker_hand = "Straight" } },
   cost = 6,
   blueprint_compat = true,
   loc_vars = function(self, info_queue, card)

@@ -64,13 +64,6 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
-  key = "MedusaJ",
-  path = "MedusaJoker.png",
-  px = 71,
-  py = 95
-})
-
-SMODS.Atlas({
   key = "GlassEnhancement",
   path = "GlassEnhancement.png",
   px = 71,
@@ -131,20 +124,24 @@ SMODS.Rarity {
 }
 
 -- Jokers
-assert(SMODS.load_file("Items/Jokers/CommonJokers.lua"))()
-assert(SMODS.load_file("Items/Jokers/UncommonJokers.lua"))()
-assert(SMODS.load_file("Items/Jokers/RareJokers.lua"))()
-assert(SMODS.load_file("Items/Jokers/SuperbJokers.lua"))()
-assert(SMODS.load_file("Items/Jokers/LegendaryJokers.lua"))()
-assert(SMODS.load_file("Items/Jokers/OmegaJokers.lua"))()
+function loadJokers()
+  assert(SMODS.load_file("Items/Jokers/CommonJokers.lua"))()
+  assert(SMODS.load_file("Items/Jokers/UncommonJokers.lua"))()
+  assert(SMODS.load_file("Items/Jokers/RareJokers.lua"))()
+  assert(SMODS.load_file("Items/Jokers/SuperbJokers.lua"))()
+  assert(SMODS.load_file("Items/Jokers/LegendaryJokers.lua"))()
+  assert(SMODS.load_file("Items/Jokers/OmegaJokers.lua"))()
+end
 
 -- Consumables
-assert(SMODS.load_file("Items/Consumable Related/Consumables.lua"))()
-assert(SMODS.load_file("Items/Consumable Related/Boosters.lua"))()
-assert(SMODS.load_file("Items/Consumable Related/Enhancements.lua"))()
-assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/TarotCards.lua"))()
-assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/PlanetCards.lua"))()
-assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/SpectralCards.lua"))()
+function loadConsumables()
+  assert(SMODS.load_file("Items/Consumable Related/Consumables.lua"))()
+  assert(SMODS.load_file("Items/Consumable Related/Boosters.lua"))()
+  assert(SMODS.load_file("Items/Consumable Related/Enhancements.lua"))()
+  assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/TarotCards.lua"))()
+  assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/PlanetCards.lua"))()
+  assert(SMODS.load_file("Items/Consumable Related/Vanilla Based/SpectralCards.lua"))()
+end
 
 -- Blind / Antes
 assert(SMODS.load_file("Items/Blinds.lua"))()
@@ -154,3 +151,6 @@ assert(SMODS.load_file("overrides.lua"))()
 assert(SMODS.load_file("contexts.lua"))()
 assert(SMODS.load_file("utils.lua"))() -- not technically used yet, but don't remove it. *cough cough* seph *cough cough* /lh
 assert(SMODS.load_file("Items/Jokers/OwnershipClaiming.lua"))()
+
+loadJokers()
+loadConsumables()

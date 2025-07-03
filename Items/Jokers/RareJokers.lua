@@ -22,7 +22,7 @@ SMODS.Joker {
   key = "winningbigJ",
   atlas = "RareJ",
   rarity = 3,
-  pos = { x = 0, y = 0 },
+  pos = { x = 1, y = 0 },
   config = { extra = { dollars = 1, money_mod = 1 } },
   cost = 10,
   blueprint_compat = false,
@@ -77,9 +77,7 @@ SMODS.Joker {
 
 SMODS.Joker({
   key = "medusaJ",
-  -- TODO: add to a proper atlas file
-  -- TODO: VVVVVVVVVVVVVVVVVVVVVVVVVV
-  atlas = "MedusaJ",
+  atlas = "RareJ",
   pos = { x = 0, y = 0 },
   rarity = 3,
   cost = 8,
@@ -279,7 +277,7 @@ SMODS.Joker {
   key = "daveJ",
   pos = { x = 2, y = 0 },
   rarity = 3,
-  atlas = "PLH",
+  atlas = "RareJ",
   config = { extra = { odds = 2 } },
   cost = 9,
   blueprint_compat = true, -- Made consistent with other effects
