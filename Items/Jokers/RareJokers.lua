@@ -198,9 +198,9 @@ SMODS.Joker({
 
 SMODS.Joker {
   key = "hashtagQueenJ",
-  atlas = "PLH",
+  atlas = "RareJ",
   rarity = 3,
-  pos = { x = 2, y = 0 },
+  pos = { x = 3, y = 0 },
   config = { extra = { x_mult = 1.5, dumb_fucking_workaround = "#" } },
   cost = 10,
   pools = { ["Q"] = true },

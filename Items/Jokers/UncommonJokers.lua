@@ -17,6 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Mod of Theseus; if not, see <https://www.gnu.org/licenses/>.
 ]]
+
 SMODS.Joker {
   key = "censoredJokerJ",
   pos = { x = 0, y = 0 },
@@ -32,7 +33,7 @@ SMODS.Joker {
     art = {
       -- They kinda just did the same thing at the same time so it'd be hard to justify crediting one over the other regardless of which one made it in
       "Goldog",
-      "Abudcted"
+      "Aduckted"
     },
     code = {
       "Mothball",
