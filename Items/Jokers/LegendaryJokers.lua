@@ -266,6 +266,17 @@ SMODS.Joker {
   rarity = 4,
   atlas = "PLH",
   cost = 20,
+    mot_credits = {
+    idea = {
+      "Yo Fish",
+    },
+    art = {
+      "Yo Fish",
+    },
+    code = {
+      "Yo Fish",
+    },
+  },
   pos = { x = 4, y = 0 },
   soul_pos = { x = 4, y = 2 },
   config = { extra = {emult = 1.1, emult_gain = 0.2 } },
@@ -277,16 +288,24 @@ SMODS.Joker {
     for _, removed_card in ipairs(context.removed) do
       if ModofTheseus.debuffed(removed_card)  then
         card.ability.extra.emult = card.ability.extra.emult + card.ability.extra.emult_gain
-        SMODS.calculate_effect({localise(k_upgrade_ex)}, card)
+        SMODS.calculate_effect({message = localize('k_upgrade_ex')}, card)
       end
     end
   end
   if context.selling_card and not context.blueprint then
     if ModofTheseus.debuffed(context.card) then
       card.ability.extra.emult = card.ability.extra.emult + card.ability.extra.emult_gain
-      SMODS.calculate_effect({message = "upgraded"}, card)
+      SMODS.calculate_effect({message = localize('k_upgrade_ex')}, card)
     end
-  end
+  end 
+  if context.joker_type_destroyed and not context.blueprint then
+    for _, removed_card in ipairs(context.removed) do
+      if ModofTheseus.debuffed(removed_card)  then
+        card.ability.extra.emult = card.ability.extra.emult + card.ability.extra.emult_gain
+        SMODS.calculate_effect({message = localize('k_upgrade_ex')}, card)
+      end
+    end
+  end    
   if context.joker_main then
     return { emult = card.ability.extra.emult }
     end
@@ -295,5 +314,4 @@ SMODS.Joker {
   -- todo: add joker display compatibility @chore  
 
 } 
-
 
