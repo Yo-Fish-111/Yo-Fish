@@ -34,7 +34,8 @@ ModofTheseus.enabled = copy_table(ModofTheseus_config)
 
 SMODS.current_mod.optional_features = function()
     return {
-        post_trigger = true,
+        post_trigger = true, -- sin jokers
+        retrigger_joker = true, -- void joker
     }
 end
 

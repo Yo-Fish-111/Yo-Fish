@@ -262,7 +262,6 @@ SMODS.Joker {
 SMODS.Joker {
   key = "exponentEdwardJ",
   pos = { x = 0, y = 0 },
-  soul_pos = { x = 0, y = 0 },
   rarity = 4,
   atlas = "PLH",
   blueprint_compat = true,

@@ -252,7 +252,7 @@ return {
           '{C:inactive}"Oh no, it\'s Jimbo\'s evil cousin, Obmij!"{}'
         },
       },
-      
+
       j_mot_saladNumberJ = {
         name = "Salad Number",
         text = {
@@ -481,7 +481,16 @@ return {
         }
       },
 
-
+      j_mot_voidJ = {
+        name = "The Void Joker",
+        text = {
+          "Copies the ability",
+          "of rightmost {C:attention}Joker{} for",
+          "each empty {C:attention}Joker{} slot",
+          "{s:0.8}The Void Joker included",
+          "{C:inactive}(Currently #1# copies{C:inactive})",
+        },
+      },
 
       ---------------------------
       ---- LEGENDARY JOKERS -----
