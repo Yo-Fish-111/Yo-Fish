@@ -163,3 +163,59 @@ SMODS.Joker{ -- Procrastination
     }
   end
 }
+
+
+SMODS.Joker {
+    key = "voidJ",
+    blueprint_compat = true,
+    rarity = "mot_superb",
+    atlas = "PLH",
+    cost = 11,
+    pos = { x = 0, y = 0 },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { G.jokers and G.jokers.config.card_limit - #G.jokers.cards } }
+    end,
+    calculate = function(self, card, context)
+        local empty_joker_slots = G.jokers.config.card_limit - #G.jokers.cards
+        local target_joker = G.jokers.cards[#G.jokers.cards]
+
+        if context.retrigger_joker_check and (not context.retrigger_joker) and (context.other_card ~= self) then
+            if context.other_card == target_joker then
+                return {
+                    message = localize("k_again_ex"),
+                    repetitions = empty_joker_slots,
+                    card = card,
+                }
+            else
+                return nil, true
+            end
+        end
+    end,
+    joker_display_def = function(JokerDisplay)
+        ---@type JDJokerDefinition
+        return {
+           reminder_text = {
+               { text = "(" },
+               { ref_table = "card.joker_display_values", ref_value = "localized_text", colour = G.C.ORANGE },
+               { text = ")" }
+           },
+           calc_function = function(card)
+               local target_joker = G.jokers.cards[#G.jokers.cards]
+
+               local localized_text = localize({ type = "name_text",
+               key = target_joker.config.center.key, set = "Joker" }) or "-"
+               if card == target_joker then
+                   localized_text = "-"
+               end
+               card.joker_display_values.localized_text = localized_text
+           end,
+           retrigger_joker_function = function(card, retrigger_joker)
+               if card == retrigger_joker then return 0 end
+               local empty_joker_slots = G.jokers.config.card_limit - #G.jokers.cards
+               local target_joker = G.jokers.cards[#G.jokers.cards]
+               if card == target_joker then return empty_joker_slots end
+               return 0
+           end
+        }
+    end,
+}

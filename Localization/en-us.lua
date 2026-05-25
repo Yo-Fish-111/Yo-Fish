@@ -252,7 +252,7 @@ return {
           '{C:inactive}"Oh no, it\'s Jimbo\'s evil cousin, Obmij!"{}'
         },
       },
-      
+
       j_mot_saladNumberJ = {
         name = "Salad Number",
         text = {
@@ -299,6 +299,15 @@ return {
         name = "Thesaurus",
         text = {
           "Increment {C:mult}factor{} by a {C:mult}dozen{}",
+        },
+      },
+
+      j_mot_unfinishedJ = {
+        name = "Unfinished Jo{V:1}ker{}",
+        text = {
+          "{C:chips}+#1#{} Chips if played",
+          "hand contains",
+          "{C:attention}#2#{} or fe{V:1}wer cards{}",
         },
       },
 
@@ -472,7 +481,16 @@ return {
         }
       },
 
-
+      j_mot_voidJ = {
+        name = "The Void Joker",
+        text = {
+          "Copies the ability",
+          "of rightmost {C:attention}Joker{} for",
+          "each empty {C:attention}Joker{} slot",
+          "{s:0.8}The Void Joker included",
+          "{C:inactive}(Currently #1# copies{C:inactive})",
+        },
+      },
 
       ---------------------------
       ---- LEGENDARY JOKERS -----
